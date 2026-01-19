@@ -1,7 +1,83 @@
 <!doctype html>
-<html>
-<head><title>Home</title></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home | Your Name</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
 <body>
-  <h1>Hello world</h1>
+<header>
+  <div class="container navbar">
+    <div class="brand">
+      <strong>Your Name</strong>
+      <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
+    </div>
+
+    <nav class="navlinks">
+      <a class="btn" href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="btn" aria-haspopup="true" aria-expanded="false">
+          Menu ▾
+        </button>
+        <div class="dropdown-menu" role="menu" aria-label="Site navigation">
+          <a href="projects.html">Projects</a>
+          <a href="research.html">Research</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="grid">
+    <div class="card col-7">
+      <h1 class="h1">Hi, I’m Your Name.</h1>
+      <p class="muted">
+        I build sensor-driven systems and data pipelines—from embedded firmware and PCB integration
+        to filtering, feature extraction, and visualization.
+      </p>
+
+      <div class="tagrow">
+        <span class="tag">Embedded + MQTT</span>
+        <span class="tag">Sensor Fusion</span>
+        <span class="tag">Filtering (Hampel/EMA/Kalman)</span>
+        <span class="tag">PCB + Lab Validation</span>
+      </div>
+
+      <hr />
+
+      <p>
+        This site is a quick way to explore my work. If you’re here from a QR code, start with
+        <a href="projects.html">Projects</a>.
+      </p>
+
+      <a class="btn" href="projects.html">See Projects →</a>
+      <a class="btn" href="resume.html">Resume →</a>
+    </div>
+
+    <div class="card col-5">
+      <h2 class="h2">Highlights</h2>
+      <ul>
+        <li><strong>Foundation Monitoring System:</strong> multi-sensor displacement tracking + UI pipeline</li>
+        <li><strong>Space Lab / HAB:</strong> custom scatter detector + constraints-driven design</li>
+        <li><strong>VLSI:</strong> 8-bit adder layout + verification</li>
+      </ul>
+      <p class="muted">Update these bullets to match your best 3.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="container">
+  <small>© <span id="y"></span> Your Name • Built with HTML/CSS • Hosted free</small>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
