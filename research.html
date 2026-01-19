@@ -1,1 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research | Your Name</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <div class="brand">
+      <strong>Your Name</strong>
+      <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
+    </div>
+    <nav class="navlinks">
+      <a class="btn" href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="btn">Menu ▾</button>
+        <div class="dropdown-menu">
+          <a href="projects.html">Projects</a>
+          <a href="research.html">Research</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1 class="h1">Research</h1>
+    <p class="muted">Summaries of investigations, methods, and what I learned.</p>
+    <hr />
+    <h2 class="h2">Signal Processing / Filtering</h2>
+    <ul>
+      <li>Hampel + EMA vs Butterworth tradeoffs on noisy sensor channels</li>
+      <li>Timestamp alignment strategies for multi-sensor fusion</li>
+    </ul>
+
+    <h2 class="h2" style="margin-top:16px;">Sensors</h2>
+    <ul>
+      <li>ToF (VL53L4CX): drift + surface reflectivity challenges</li>
+      <li>PCR radar (XM125): stability vs environmental conditions</li>
+      <li>IMU (BNO055/MPU6050): why drift makes it a weak primary displacement sensor</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="container">
+  <small>© <span id="y"></span> Your Name</small>
+</footer>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
