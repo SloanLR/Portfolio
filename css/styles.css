@@ -66,13 +66,13 @@ header{
 
 .btn:hover{ background: rgba(255,255,255,.06); text-decoration:none; }
 /* Navbar text colors */
-.navbar a.btn,
-.navbar button.btn{
+header .navbar a.btn,
+header .navbar button.btn{
   color: var(--nav-text);
 }
 
-.navbar a.btn:hover,
-.navbar button.btn:hover{
+header .navbar a.btn:hover,
+header .navbar button.btn:hover{
   color: var(--nav-hover);
 }
 
