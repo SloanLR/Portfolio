@@ -1,2 +1,2 @@
 # Portfolio
-Portfolio of major projects I've completed.
+Online portfolio of major projects I've completed.
