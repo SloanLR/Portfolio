@@ -94,6 +94,7 @@ header .navbar button.btn:hover{
   grid-template-columns: repeat(12, 1fr);
   gap: 16px;
 }
+.col-4{ grid-column: span 4; }
 .col-5{ grid-column: span 5; } /* 5/12 = 41% */
 .col-6{ grid-column: span 6; } /* 50% */
 .col-7{ grid-column: span 7; }
