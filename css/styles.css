@@ -91,7 +91,7 @@ header .navbar button.btn:hover{
 /* Home background section */
 .home-bg{
   position: relative;
-  background-image: url("assets/fibonacci-in-blue.jpg");  /* adjust path */
+  background-image: url("../assets/fibonacci-in-blue.jpg");  /* adjust path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
