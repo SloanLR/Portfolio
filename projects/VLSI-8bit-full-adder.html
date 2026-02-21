@@ -115,30 +115,23 @@
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
         <h3 class="h3">My Contribution</h3>
-       <div class="col-5">
-        <img
+       <figure>
+        <img 
           src="../assets/8-bitFullAdder/Sloan.jpg"
-          alt="Microwind 8-bit full adder layout"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          alt="Me working"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
         >
-      </div>
+      
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 1. Me working with Microwind designing and optimizing original design.
+        </figcaption>
+      </figure>
         <ul>
           <li>Layout architecture proposal (modular 1-bit cell → scalable 8-bit design)</li>
           <li>Microwind transistor-level layout + routing</li>
           <li>Layout optimization (symmetry, compactness, cleaner routing)</li>
           <li>Post-layout simulation + timing validation</li>
         </ul>
-       <figure>
-        <img 
-          src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
-          alt="Initial Layout"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-        <figcaption class="muted" style="margin-top:8px;">
-          Figure 1. My proposed top-level diagram for chip layout.
-        </figcaption>
-      </figure>
       </div>
 
       <div class="col-6">
@@ -150,7 +143,7 @@
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
-        <figcaption class="muted" style="margin-top:8px;">
+         <figcaption class="muted" style="font-size:0.85rem;">
           Figure 2. From left to right: Shivani Mruthyunjaya, Sloan Louden-Robins, Luke Scarpato
         </figcaption>
       </figure>
@@ -173,7 +166,17 @@
           Use this section to show that you can run a project like an engineer: define scope, split work, and
           validate assumptions early.
         </p>
-
+       <figure>
+        <img 
+          src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
+          alt="Initial Layout"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 3. My proposed top-level diagram for chip layout where 1-bit full adder cell is designed to be modular.
+        </figcaption>
+      </figure>
         <h3 class="h3">Workflow</h3>
         <ul>
           <li>Defined the 1-bit full adder cell as the repeatable module</li>
@@ -189,19 +192,6 @@
           <li><strong>Shivani:</strong> schedule, documentation, support, and results analysis</li>
         </ul>
       </div>
-
-      <div class="col-5">
-        <img
-          src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
-          alt="Microwind 8-bit full adder layout"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-        >
-        <img
-          src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
-          alt="Microwind 1-bit full adder layout"
-          style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-        >
-      </div>
     </div>
   </article>
 
@@ -212,10 +202,20 @@
       Explain the design at a high level: how the 1-bit cell works and how it scales into the 8-bit ripple-carry.
       Keep it skimmable—this is where recruiters decide if the project is “real.”
     </p>
-
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
         <h3 class="h3">1-bit Full Adder Building Block</h3>
+        <figure>
+        <img 
+          src="../assets/8-bitFullAdder/LTSpice_1-bit.png"
+          alt="Luke's 1-bit full adder in LTSpice"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 4. Luke's implementation of the 1-bit full adder in LTSpice.
+        </figcaption>
+      </figure>
         <ul>
           <li>Inputs: A, B, Cin</li>
           <li>Outputs: Sum, Cout</li>
@@ -224,6 +224,17 @@
       </div>
       <div class="col-6">
         <h3 class="h3">8-bit Ripple-Carry Integration</h3>
+        <figure>
+        <img 
+          src="../assets/8-bitFullAdder/LTSpice_8-bit.png"
+          alt="Luke's 8-bit full adder in LTSpice"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 5. Luke's implementation of the 8-bit full adder in LTSpice.
+        </figcaption>
+      </figure>
         <ul>
           <li>Chained Cout → next stage Cin (carry propagation path)</li>
           <li>Modular repetition for consistent routing and symmetry</li>
@@ -231,15 +242,6 @@
         </ul>
       </div>
     </div>
-
-    <!-- Optional architecture image -->
-    <!--
-    <img
-      src="../assets/8-bitFullAdder/architecture.png"
-      alt="8-bit ripple carry architecture diagram"
-      style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-    >
-    -->
   </article>
 
   <!-- 4) Layout Strategy -->
@@ -256,20 +258,33 @@
         </ul>
 
         <h3 class="h3">Implementation choices</h3>
+        <figure>
+        <img 
+          src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
+          alt="Microwind 1-bit full adder"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 6. My implementation of 1-bit full adder in Microwind.
+        </figcaption>
+      </figure>
         <ul>
           <li>Standardized the 1-bit layout so it tiles cleanly across 8 stages</li>
           <li>Routed carry nets deliberately (since they dominate delay)</li>
           <li>Used consistent transistor orientation where possible</li>
         </ul>
-      </div>
-
-      <div class="col-5">
-        <!-- Replace with your best “clean layout” screenshot -->
-        <img
+        <figure>
+        <img 
           src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
-          alt="Microwind 8-bit adder layout (optimized routing and symmetry)"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          alt="Microwind 8-bit full adder"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
         >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 7. My implementation of 8-bit full adder in Microwind.
+        </figcaption>
+      </figure>
       </div>
     </div>
   </article>
@@ -297,20 +312,6 @@
           <li>Compared propagation delay across iterations</li>
           <li>Checked for functional correctness under expected input patterns</li>
         </ul>
-      </div>
-
-      <div class="col-5">
-        <!-- Swap with an “before/after” image if you have it -->
-        <!--
-        <img
-          src="../assets/8-bitFullAdder/optimization_before_after.png"
-          alt="Before and after routing optimization"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-        >
-        -->
-        <p class="muted" style="margin-top:0;">
-          Optional: add a before/after figure here to make the optimization real.
-        </p>
       </div>
     </div>
   </article>
