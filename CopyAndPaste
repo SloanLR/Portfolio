@@ -21,53 +21,57 @@
     </article>
 ------------------------------------------------------------------------------------------------------------------------
 ----------------------------- Adding two columns of text and images-----------------------------------------------------
-   <!-- two-column layout inside the card -->
-    <section class="grid" style="margin-top:12px;">
-      <!-- LEFT --> [currently text only, can interchange with text and image]
-      <div class="col-7">
-        <p>
-          paragraph 1
-        </p>
-        <p>
-         paragraph 2
-        </p>  
-        <p>
-          paragraph 3
-        </p>
-        <p>
-          paragraph 4
-        </p>
+<main class="container">
+
+  <!-- Page header card -->
+  <div class="card">
+    <h1 class="h1">VLSI – 8-bit Full Adder</h1>
+    <p class="muted">[Insert project description here]</p>
+  </div>
+
+  <section class="grid" style="margin-top:16px;">
+
+    <article class="card col-12">
+      <h2 class="h2">[Insert text 1]</h2>
+      <p class="muted">[descriptor 1] • [descriptor 2] • Microwind Design</p>
+
+      <p>[Insert Text Here 2]</p>
+
+      <div class="tagrow">
+        <span class="tag">[Tag 1]</span>
+        <span class="tag">[Tag 2]</span>
+        <span class="tag">[Tag 3]</span>
+        <span class="tag">[Tag 4]</span>
       </div>
 
-      <!-- RIGHT --> [currently image only]
-      <div class="col-5">
-        <img
-          src="assets/Grad_1.JPG" // path here
-          alt="Graduation photo 1"
-          style="
-            width:70%;
-            max-width:300px;
-            height:auto;
-            display:block;
-            margin:16px auto;
-            border-radius:14px;
-            border:1px solid rgba(255,255,255,.12);
-          "
-        >
+      <!-- Two-column layout inside this card -->
+      <section class="grid" style="margin-top:12px;">
 
-        <img
-          src="assets/Jaxon.jpg" // path here
-          alt="Jaxon"
-          style="
-            width:70%;
-            max-width:300px;
-            height:auto;
-            display:block;
-            margin:16px auto;
-            border-radius:14px;
-            border:1px solid rgba(255,255,255,.12);
-          "          
-        >
-      </div>
-    </section>
+        <div class="col-7">
+          <p>paragraph 1</p>
+          <p>paragraph 2</p>
+          <p>paragraph 3</p>
+          <p>paragraph 4</p>
+        </div>
+
+        <div class="col-5">
+          <img
+            src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
+            alt="Microwind 8-bit full adder layout"
+            style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          >
+
+          <img
+            src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
+            alt="Microwind 1-bit adder layout"
+            style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          >
+        </div>
+
+      </section>
+    </article>
+
+  </section>
+
+</main>
 -----------------------------------------------------------------------------------------------------------------------
