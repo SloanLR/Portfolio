@@ -163,44 +163,77 @@
 <div class="grid" style="margin-top:12px;">
 
   <!-- LEFT COLUMN -->
-  <div class="col-7">
-    <p>
-      Use this section to show that you can run a project like an engineer: define scope, split work, and
-      validate assumptions early.
-    </p>
+ <!-- LEFT COLUMN -->
+<div class="col-7">
+  <p>
+    Use this section to show that you can run a project like an engineer: define scope, split work, and
+    validate assumptions early.
+  </p>
 
-    <h3 class="h3">Workflow</h3>
-    <ul>
-      <li>Defined the 1-bit full adder cell as the repeatable module</li>
-      <li>Split validation: LTspice for functional behavior, Microwind for physical + post-layout timing</li>
-      <li>Weekly check-ins to align schematic assumptions with layout constraints</li>
-      <li>Tracked changes and decisions (layout iterations, routing edits, simulation cases)</li>
-    </ul>
+  <h3 class="h3">Workflow</h3>
+  <ul>
+    <li><strong>Defined the 1-bit full adder cell</strong> as the repeatable module (transistor-level CMOS)</li>
+    <li><strong>Split validation:</strong> LTSpice for pre-layout functional + timing baseline, MicroWind for physical layout + post-layout timing</li>
+    <li><strong>Iterated architecture → schematic → layout:</strong> confirmed NAND-based logic transformations before committing to routing</li>
+    <li><strong>Measured critical timing behavior:</strong> tracked carry-chain delay across stages (ripple propagation)</li>
+    <li><strong>Tracked changes and decisions:</strong> layout iterations, routing edits (Metal2 usage), and simulation cases</li>
+  </ul>
 
-    <h3 class="h3">Team roles</h3>
-    <ul>
-      <li><strong>Me:</strong> Microwind layout + optimization + post-layout simulation</li>
-      <li><strong>Luke:</strong> LTspice schematic + simulation</li>
-      <li><strong>Shivani:</strong> schedule, documentation, support, and results analysis</li>
-    </ul>
-  </div>
+  <h3 class="h3">Team roles</h3>
+  <ul>
+    <li><strong>Me:</strong> proposed the 8-bit tiling layout, implemented CMOS layout in MicroWind, optimized routing/symmetry, and ran post-layout simulation</li>
+    <li><strong>Luke:</strong> built the LTSpice schematic (gate + transistor level) and ran pre-layout simulations</li>
+    <li><strong>Shivani:</strong> managed project schedule, authored documentation, assisted as needed, and analyzed MicroWind simulation results</li>
+  </ul>
 
-  <!-- RIGHT COLUMN -->
-  <div class="col-5">
-    <figure>
-      <img 
-        src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
-        alt="Initial Layout"
-        style="width:100%; height:auto; display:block; border-radius:14px;"
-      >
-      <figcaption class="muted" style="font-size:0.85rem;">
-        Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
-      </figcaption>
-    </figure>
-  </div>
+  <h3 class="h3">Design theory (LTSpice)</h3>
+  <p class="muted" style="margin-top:-0.25rem;">
+    Recruiter-skim version: what the 1-bit cell computes and how it scales into an 8-bit ripple-carry.
+  </p>
 
+  <ul>
+    <li>
+      <strong>1-bit full adder function:</strong>
+      <span style="white-space:nowrap;"><em>Sum</em> = A ⊕ B ⊕ C<sub>in</sub></span>,
+      <span style="white-space:nowrap;"><em>C</em><sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub></span>
+    </li>
+    <li>
+      <strong>Implementation detail:</strong> logic rewritten using NAND-based equivalents (DeMorgan “bubble pushing”) and built as complementary CMOS
+      (PMOS pull-up + NMOS pull-down) in LTSpice.
+    </li>
+    <li>
+      <strong>Carry-chain behavior:</strong> eight identical 1-bit cells are cascaded:
+      <span style="white-space:nowrap;">C<sub>out0</sub> → C<sub>in1</sub> → … → C<sub>in7</sub> → C<sub>out7</sub></span>.
+      Worst-case delay occurs when carry must propagate through all stages.
+    </li>
+    <li>
+      <strong>Timing expectation:</strong>
+      <span style="white-space:nowrap;">t<sub>pd,total</sub> ≈ N · t<sub>carry</sub></span>
+      (linear scaling for ripple-carry), so LTSpice provides a clean pre-layout baseline before parasitics.
+    </li>
+    <li>
+      <strong>Simulation approach:</strong> pulsed A, B, and C<sub>in</sub> inputs to validate truth-table correctness and measure input→output propagation delay
+      (pre-layout / ideal interconnect).
+    </li>
+  </ul>
 </div>
-  </article>
+
+<!-- RIGHT COLUMN -->
+<div class="col-5">
+  <figure>
+    <img 
+      src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
+      alt="Initial Layout"
+      style="width:100%; height:auto; display:block; border-radius:14px;"
+    >
+    <figcaption class="muted" style="font-size:0.85rem;">
+      Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
+    </figcaption>
+  </figure>
+</div>
+  
+</div>
+</article>
 
   <!-- 3) Architecture -->
   <article class="card col-12">
