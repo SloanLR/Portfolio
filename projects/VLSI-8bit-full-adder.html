@@ -185,12 +185,37 @@
     <li><strong>Luke:</strong> built the LTSpice schematic (gate + transistor level) and ran pre-layout simulations</li>
     <li><strong>Shivani:</strong> managed project schedule, authored documentation, assisted as needed, and analyzed MicroWind simulation results</li>
   </ul>
+</div>
 
-  <h3 class="h3">Design theory (LTSpice)</h3>
-  <p class="muted" style="margin-top:-0.25rem;">
-    Recruiter-skim version: what the 1-bit cell computes and how it scales into an 8-bit ripple-carry.
-  </p>
+<!-- RIGHT COLUMN -->
+<div class="col-5">
+  <figure>
+    <img 
+      src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
+      alt="Initial Layout"
+      style="width:100%; height:auto; display:block; border-radius:14px;"
+    >
+    <figcaption class="muted" style="font-size:0.85rem;">
+      Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
+    </figcaption>
+  </figure>
+</div>
+  
+</div>
+</article>
 
+  <!-- 3) Architecture -->
+  <article class="card col-12">
+    <h2 class="h2">Architecture</h2>
+    <p>
+      The architecture is built around a modular 1-bit CMOS full adder cell that computes Sum = A ⊕ B ⊕ 
+      C<sub>in</sub> and C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub>, implemented at the transistor
+      level using complementary pull-up and pull-down networks. Eight identical cells are cascaded in
+      a ripple-carry configuration, where each stage’s carry-out feeds the next stage’s carry-in, 
+      resulting in linear delay scaling along the carry chain.
+    </p>
+    
+ <h3 class="h3">Design theory (LTSpice)</h3>    
   <ul>
     <li>
       <strong>1-bit full adder function:</strong>
@@ -216,32 +241,6 @@
       (pre-layout / ideal interconnect).
     </li>
   </ul>
-</div>
-
-<!-- RIGHT COLUMN -->
-<div class="col-5">
-  <figure>
-    <img 
-      src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
-      alt="Initial Layout"
-      style="width:100%; height:auto; display:block; border-radius:14px;"
-    >
-    <figcaption class="muted" style="font-size:0.85rem;">
-      Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
-    </figcaption>
-  </figure>
-</div>
-  
-</div>
-</article>
-
-  <!-- 3) Architecture -->
-  <article class="card col-12">
-    <h2 class="h2">Architecture</h2>
-    <p>
-      Explain the design at a high level: how the 1-bit cell works and how it scales into the 8-bit ripple-carry.
-      Keep it skimmable—this is where recruiters decide if the project is “real.”
-    </p>
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
         <h3 class="h3">1-bit Full Adder Building Block</h3>
