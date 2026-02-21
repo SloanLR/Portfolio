@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Letters of Recommendation | K. Sloan Louden-Robins</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
@@ -15,19 +15,20 @@
       <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
     </div>
 
+    <!-- Project-page navbar (note ../ for root pages) -->
     <nav class="navlinks">
-      <a class="btn" href="home.html">Home</a>
+      <a class="btn" href="../home.html">Home</a>
 
       <div class="dropdown">
         <button class="btn" aria-haspopup="true" aria-expanded="false">
           Projects ▾
         </button>
         <div class="dropdown-menu" role="menu" aria-label="Projects navigation">
-          <a href="projects/home.html">All Projects</a>
-          <a href="projects/foundation-monitoring.html">Foundation Monitoring System</a>
-          <a href="projects/HAB-scatter-detector.html">Space Lab / HAB</a>
-          <a href="projects/VLSI-8bit-full-adder.html">VLSI 8-bit Adder</a>
-          <a href="projects/PID-controls.html">PID / Controls</a>
+          <a href="home.html">All Projects</a>
+          <a href="foundation-monitoring.html">Foundation Monitoring System</a>
+          <a href="HAB-scatter-detector.html">Space Lab / HAB</a>
+          <a href="VLSI-8bit-full-adder.html">VLSI 8-bit Adder</a>
+          <a href="PID-controls.html">PID / Controls</a>
         </div>
       </div>
 
@@ -36,10 +37,9 @@
           Menu ▾
         </button>
         <div class="dropdown-menu" role="menu" aria-label="Site navigation">
-          <a href="research.html">Research</a>
-          <a href="resume.html">Resume</a>
-          <a href="letters.html">Letters of Recommendation</a>
-          <a href="contact.html">Contact</a>
+          <a href="../research.html">Research</a>
+          <a href="../resume.html">Resume</a>
+          <a href="../contact.html">Contact</a>
         </div>
       </div>
     </nav>
@@ -47,84 +47,127 @@
 </header>
 
 <main class="container">
-
-  <!-- Page Intro Card -->
   <div class="card">
-    <h1 class="h1">Letters of Recommendation</h1>
+    <h1 class="h1">Projects</h1>
     <p class="muted">
-      Professional and academic letters supporting my work in electrical engineering,
-      applied mathematics, embedded systems, and research.
+      A curated set of projects showing hands-on work across embedded systems, sensors,
+      signal processing, and design documentation. Each card links to a full write-up.
     </p>
+
+    <div class="tagrow">
+      <span class="tag">Embedded</span>
+      <span class="tag">Sensor Fusion</span>
+      <span class="tag">DSP / Filtering</span>
+      <span class="tag">PCB + Validation</span>
+      <span class="tag">Controls</span>
+      <span class="tag">VLSI</span>
+    </div>
   </div>
 
-  <!-- Letters Section -->
   <section class="grid" style="margin-top:16px;">
-
-    <!-- Letter 1 -->
+    <!-- Card 1 -->
     <article class="card col-12">
-      <h2 class="h2">Dr. [Name] — Electrical Engineering</h2>
-      <p class="muted">Texas State University • Senior Design Advisor</p>
+      <h2 class="h2">Foundation Monitoring System</h2>
+      <p class="muted">Multi-sensor displacement monitoring • Real-time pipeline • UI visualization</p>
 
       <p>
-        Summary sentence describing what this letter highlights — leadership,
-        technical depth, research rigor, teamwork, etc.
+        Built and validated a scalable data-processing workflow for IMU, ToF, radar, and auxiliary sensors.
+        Focused on filtering, time alignment, and producing a stable displacement metric for visualization and alerting.
       </p>
 
+      <div class="tagrow">
+        <span class="tag">MQTT</span>
+        <span class="tag">InfluxDB/Grafana</span>
+        <span class="tag">Kalman/Hampel/EMA</span>
+        <span class="tag">Sensor Fusion</span>
+      </div>
+
       <div style="margin-top:12px;">
-        <a class="btn" href="assets/letters/Dr_Name_LOR.pdf" target="_blank">View Letter →</a>
+        <a class="btn" href="foundation-monitoring.html">Open project →</a>
       </div>
     </article>
 
-    <!-- Letter 2 -->
+    <!-- Card 2 -->
     <article class="card col-12">
-      <h2 class="h2">Dr. [Name] — Applied Mathematics</h2>
-      <p class="muted">Texas State University • Research Supervisor</p>
+      <h2 class="h2">Space Lab / HAB Scatter Detector</h2>
+      <p class="muted">Optical scatter sensing • PCB + chamber integration • Constraints-driven design</p>
 
       <p>
-        Short description of the context — research collaboration, analytical work,
-        signal processing depth, etc.
+        Designed and tested an optical scatter detector concept under strict size, mass, and power constraints
+        for a high-altitude balloon payload. Emphasis on signal chain behavior and practical integration.
       </p>
 
+      <div class="tagrow">
+        <span class="tag">PCB</span>
+        <span class="tag">Analog Front-End</span>
+        <span class="tag">ADC</span>
+        <span class="tag">Testing + Validation</span>
+      </div>
+
       <div style="margin-top:12px;">
-        <a class="btn" href="assets/letters/Dr_Name_LOR.pdf" target="_blank">View Letter →</a>
+        <a class="btn" href="HAB-scatter-detector.html">Open project →</a>
       </div>
     </article>
 
-    <!-- Letter 3 -->
+    <!-- Card 3 -->
     <article class="card col-12">
-      <h2 class="h2">[Industry / Professional Reference]</h2>
-      <p class="muted">Title • Organization</p>
+      <h2 class="h2">VLSI 8-bit Adder</h2>
+      <p class="muted">Layout + verification • Tradeoffs across area/delay/power</p>
 
       <p>
-        Brief description of professional context — reliability, leadership,
-        cross-functional collaboration, high-pressure client work, etc.
+        Implemented an 8-bit adder in a VLSI layout workflow, verifying functionality and documenting design choices.
+        Highlighted tradeoffs and how small topology decisions affect timing and footprint.
       </p>
 
+      <div class="tagrow">
+        <span class="tag">Microwind</span>
+        <span class="tag">CMOS Layout</span>
+        <span class="tag">Verification</span>
+      </div>
+
       <div style="margin-top:12px;">
-        <a class="btn" href="assets/letters/Professional_LOR.pdf" target="_blank">View Letter →</a>
+        <a class="btn" href="VLSI-8bit-full-adder.html">Open project →</a>
       </div>
     </article>
 
+    <!-- Card 4 -->
+    <article class="card col-12">
+      <h2 class="h2">PID / Controls Design</h2>
+      <p class="muted">Controller design + simulation • Stability + tuning</p>
+
+      <p>
+        Designed and simulated PID control strategies for a higher-order plant, focusing on tuning approaches,
+        performance metrics, and stability constraints.
+      </p>
+
+      <div class="tagrow">
+        <span class="tag">Controls</span>
+        <span class="tag">PID</span>
+        <span class="tag">Simulation</span>
+      </div>
+
+      <div style="margin-top:12px;">
+        <a class="btn" href="PID-controls.html">Open project →</a>
+      </div>
+    </article>
   </section>
 
-  <!-- Closing Card -->
   <div class="card" style="margin-top:16px;">
-    <h2 class="h2">Additional References</h2>
+    <h2 class="h2">Want the short version?</h2>
     <p class="muted">
-      Additional references are available upon request.
+      If you’re scanning quickly: start with Foundation Monitoring System (most complete end-to-end),
+      then Space Lab/HAB (constraints + integration), then one of Controls/VLSI depending on the role.
     </p>
-    <a class="btn" href="contact.html">Contact →</a>
+    <a class="btn" href="../resume.html">Resume →</a>
+    <a class="btn" href="../contact.html">Contact →</a>
   </div>
-
 </main>
 
 <footer class="container">
   <small>© <span id="y"></span> Kimberly Sloan Louden-Robins</small>
 </footer>
-
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
