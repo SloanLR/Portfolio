@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | K. Sloan Louden-Robins</title>
+  <title>VLSI | K. Sloan Louden-Robins</title>
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
@@ -15,14 +15,11 @@
       <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
     </div>
 
-    <!-- Project-page navbar (note ../ for root pages) -->
     <nav class="navlinks">
       <a class="btn" href="../home.html">Home</a>
 
       <div class="dropdown">
-        <button class="btn" aria-haspopup="true" aria-expanded="false">
-          Projects ▾
-        </button>
+        <button class="btn" aria-haspopup="true" aria-expanded="false">Projects ▾</button>
         <div class="dropdown-menu" role="menu" aria-label="Projects navigation">
           <a href="home.html">All Projects</a>
           <a href="foundation-monitoring.html">Foundation Monitoring System</a>
@@ -33,12 +30,11 @@
       </div>
 
       <div class="dropdown">
-        <button class="btn" aria-haspopup="true" aria-expanded="false">
-          Menu ▾
-        </button>
+        <button class="btn" aria-haspopup="true" aria-expanded="false">Menu ▾</button>
         <div class="dropdown-menu" role="menu" aria-label="Site navigation">
           <a href="../research.html">Research</a>
           <a href="../resume.html">Resume</a>
+          <a href="../letters/home.html">Letters</a>
           <a href="../contact.html">Contact</a>
         </div>
       </div>
@@ -47,33 +43,63 @@
 </header>
 
 <main class="container">
+
+  <!-- Page header card -->
   <div class="card">
-    <h1 class="h1">VLSI - 8-bit Full Adder</h1>
-    <p class="muted">
-      [Insert project description here]
-    </p>
-  
+    <h1 class="h1">VLSI – 8-bit Full Adder</h1>
+    <p class="muted">[Insert project description here]</p>
+  </div>
+
   <section class="grid" style="margin-top:16px;">
-    <!-- Card 1 -->
+
     <article class="card col-12">
       <h2 class="h2">[Insert text 1]</h2>
-      <p class="muted">[descripter 1] • [descripter 2] • Microwind Design</p>
+      <p class="muted">[descriptor 1] • [descriptor 2] • Microwind Design</p>
 
-      <p>
-        [Insert Text Here 2]
-      </p>
+      <p>[Insert Text Here 2]</p>
 
       <div class="tagrow">
-        <span class="tag">[Tag that relates 1]</span>
+        <span class="tag">[Tag 1]</span>
         <span class="tag">[Tag 2]</span>
         <span class="tag">[Tag 3]</span>
         <span class="tag">[Tag 4]</span>
       </div>
-  </main>
-      
+
+      <!-- Two-column layout inside this card -->
+      <section class="grid" style="margin-top:12px;">
+
+        <div class="col-7">
+          <p>paragraph 1</p>
+          <p>paragraph 2</p>
+          <p>paragraph 3</p>
+          <p>paragraph 4</p>
+        </div>
+
+        <div class="col-5">
+          <img
+            src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
+            alt="Microwind 8-bit full adder layout"
+            style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          >
+
+          <img
+            src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
+            alt="Microwind 1-bit adder layout"
+            style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+          >
+        </div>
+
+      </section>
+    </article>
+
+  </section>
+
+</main>
+
 <footer class="container">
   <small>© <span id="y"></span> Kimberly Sloan Louden-Robins</small>
 </footer>
+
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
 </script>
