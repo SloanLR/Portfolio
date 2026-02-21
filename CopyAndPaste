@@ -20,3 +20,54 @@
       </div>
     </article>
 ------------------------------------------------------------------------------------------------------------------------
+----------------------------- Adding two columns of text and images-----------------------------------------------------
+   <!-- two-column layout inside the card -->
+    <section class="grid" style="margin-top:12px;">
+      <!-- LEFT --> [currently text only, can interchange with text and image]
+      <div class="col-7">
+        <p>
+          paragraph 1
+        </p>
+        <p>
+         paragraph 2
+        </p>  
+        <p>
+          paragraph 3
+        </p>
+        <p>
+          paragraph 4
+        </p>
+      </div>
+
+      <!-- RIGHT --> [currently image only]
+      <div class="col-5">
+        <img
+          src="assets/Grad_1.JPG" // path here
+          alt="Graduation photo 1"
+          style="
+            width:70%;
+            max-width:300px;
+            height:auto;
+            display:block;
+            margin:16px auto;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,.12);
+          "
+        >
+
+        <img
+          src="assets/Jaxon.jpg" // path here
+          alt="Jaxon"
+          style="
+            width:70%;
+            max-width:300px;
+            height:auto;
+            display:block;
+            margin:16px auto;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,.12);
+          "          
+        >
+      </div>
+    </section>
+-----------------------------------------------------------------------------------------------------------------------
