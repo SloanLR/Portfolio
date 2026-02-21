@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Academic Letters of Recommendation | K. Sloan Louden-Robins</title>
+  <link rel="stylesheet" href="../css/styles.css" /> 
+</head>
+
+<body>
+<header>
+  <div class="container navbar">
+    <div class="brand">
+      <strong>Sloan Louden-Robins</strong>
+      <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
+    </div>
+
+    <!-- Project-page navbar (note ../ for root pages) -->
+    <nav class="navlinks">
+      <a class="btn" href="../home.html">Home</a>
+
+      <div class="dropdown">
+        <button class="btn" aria-haspopup="true" aria-expanded="false">
+          Letters ▾
+        </button>
+        <div class="dropdown-menu" role="menu" aria-label="Projects navigation">
+          <a href="letters/home.html">All Letters</a>
+          <a href="letters/academic.html">Academic</a>
+          <a href="letters/professional.html">Professional</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn" aria-haspopup="true" aria-expanded="false">
+          Author ▾
+        </button>
+        <div class="dropdown-menu" role="menu" aria-label="Site navigation">
+          <a href="../letters/academic/jellison.html">Evan Jellison</a>
+          <a href="../letters/academic/guillen.html">Nestor Guillen</a>
+          <a href="../letters/academic/quinn.html">Liam Quinn</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="card">
+    <h1 class="h1">Letters of Recommendation</h1>
+    <p class="muted">
+      Professional and academic endorsements supporting my technical work and leadership.
+    </p>
+  </div>
+
+  <section class="grid" style="margin-top:16px;">
+
+    <article class="card col-12">
+      <h2 class="h2">Evan Jellison</h2>
+      <p>Evan G. Jellison is an Assistant Professor of Instruction in Physics at Texas State University, 
+        where he integrates space science research with hands-on physics education. His work includes developing 
+        astronomical data analysis tools and supporting satellite and observatory initiatives that expand student
+        engagement in STEM.</p>
+      <a class="btn" href="jellison.html">View Letter →</a>
+    </article>
+
+    <article class="card col-12">
+      <h2 class="h2">Nestor Guillen</h2>
+      <p>Néstor D. Guillen is an Associate Professor of Mathematics at Texas State University whose research centers
+        on partial differential equations, nonlocal operators, and nonlinear analysis. His work advances theoretical 
+        understanding of elliptic and integro-differential equations, with applications to mathematical physics and 
+        applied analysis, supported in part by competitive research funding including an NSF CAREER award.</p>
+      <a class="btn" href="guillen.html">View Letter →</a>
+    </article>
+
+    <article class="card col-12">
+      <h2 class="h2">Liam Quinn</h2>
+      <p>Liam B. Quinn is a Lecturer in the Texas State University Ingram School of Engineering whose work integrates
+        machine learning and cybersecurity concepts into engineering education and applied research. His recent scholarly 
+        projects include contributions to studies on cyber-attack monitoring and detection using advanced machine learning
+        techniques.</p>
+      <a class="btn" href="quinn.html">View Letter →</a>
+    </article>
+
+  </section>
+
+</main>
+
+<footer class="container">
+  <small>© <span id="y"></span> Kimberly Sloan Louden-Robins</small>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
