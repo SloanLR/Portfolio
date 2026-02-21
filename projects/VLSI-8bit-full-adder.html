@@ -208,11 +208,11 @@
   <article class="card col-12">
     <h2 class="h2">Architecture</h2>
     <p>
-      The architecture is built around a modular 1-bit CMOS full adder cell that computes Sum = A ⊕ B ⊕ 
-      C<sub>in</sub> and C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub>, implemented at the transistor
-      level using complementary pull-up and pull-down networks. Eight identical cells are cascaded in
-      a ripple-carry configuration, where each stage’s carry-out feeds the next stage’s carry-in, 
-      resulting in linear delay scaling along the carry chain.
+      The design is built around a modular 1-bit CMOS full adder cell that computes
+      Sum = A ⊕ B ⊕ C<sub>in</sub> and C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub>,
+      implemented at the transistor level using complementary pull-up and pull-down networks.
+      Eight identical cells are cascaded in a ripple-carry configuration, where
+      each stage’s carry-out feeds the next stage’s carry-in, forming a carry chain whose worst-case delay scales linearly with bit width.
     </p>
     
  <h3 class="h3">Design theory (LTSpice)</h3>    
