@@ -160,39 +160,46 @@
   <article class="card col-12">
     <h2 class="h2">Planning and Collaboration</h2>
 
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <p>
-          Use this section to show that you can run a project like an engineer: define scope, split work, and
-          validate assumptions early.
-        </p>
-       <figure>
-        <img 
-          src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
-          alt="Initial Layout"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 3. My proposed top-level diagram for chip layout where 1-bit full adder cell is designed to be modular.
-        </figcaption>
-      </figure>
-        <h3 class="h3">Workflow</h3>
-        <ul>
-          <li>Defined the 1-bit full adder cell as the repeatable module</li>
-          <li>Split validation: LTspice for functional behavior, Microwind for physical + post-layout timing</li>
-          <li>Weekly check-ins to align schematic assumptions with layout constraints</li>
-          <li>Tracked changes and decisions (layout iterations, routing edits, simulation cases)</li>
-        </ul>
+<div class="grid" style="margin-top:12px;">
 
-        <h3 class="h3">Team roles</h3>
-        <ul>
-          <li><strong>Me:</strong> Microwind layout + optimization + post-layout simulation</li>
-          <li><strong>Luke:</strong> LTspice schematic + simulation</li>
-          <li><strong>Shivani:</strong> schedule, documentation, support, and results analysis</li>
-        </ul>
-      </div>
-    </div>
+  <!-- LEFT COLUMN -->
+  <div class="col-7">
+    <p>
+      Use this section to show that you can run a project like an engineer: define scope, split work, and
+      validate assumptions early.
+    </p>
+
+    <h3 class="h3">Workflow</h3>
+    <ul>
+      <li>Defined the 1-bit full adder cell as the repeatable module</li>
+      <li>Split validation: LTspice for functional behavior, Microwind for physical + post-layout timing</li>
+      <li>Weekly check-ins to align schematic assumptions with layout constraints</li>
+      <li>Tracked changes and decisions (layout iterations, routing edits, simulation cases)</li>
+    </ul>
+
+    <h3 class="h3">Team roles</h3>
+    <ul>
+      <li><strong>Me:</strong> Microwind layout + optimization + post-layout simulation</li>
+      <li><strong>Luke:</strong> LTspice schematic + simulation</li>
+      <li><strong>Shivani:</strong> schedule, documentation, support, and results analysis</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="col-5">
+    <figure>
+      <img 
+        src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
+        alt="Initial Layout"
+        style="width:100%; height:auto; display:block; border-radius:14px;"
+      >
+      <figcaption class="muted" style="font-size:0.85rem;">
+        Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
+      </figcaption>
+    </figure>
+  </div>
+
+</div>
   </article>
 
   <!-- 3) Architecture -->
