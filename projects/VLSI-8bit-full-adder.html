@@ -43,48 +43,356 @@
 
 <main class="container">
 
-  <!-- Page header card -->
-  <div class="card">
-    <h1 class="h1">VLSI – 8-bit Full Adder</h1>
-    <p class="muted">Designed and implemented an 8-bit ripple carry adder at the CMOS transistor level, including 
-      physical layout, routing optimization, and post-layout timing analysis. The project emphasized modular 
-      architecture, layout symmetry, and propagation delay evaluation.</p>
+  <!-- Hero Section -->
+<section class="card" style="padding:0; overflow:hidden;">
+
+  <div style="position:relative;">
+
+    <!-- Hero Image -->
+    <img
+      src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
+      alt="Microwind 8-bit ripple carry adder layout"
+      style="width:100%; height:auto; display:block;"
+    >
+
+    <!-- Optional overlay -->
+    <div style="
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      padding:24px;
+      background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
+    ">
+      <h1 class="h1" style="margin:0; color:white;">
+        VLSI – 8-bit Ripple Carry Adder
+      </h1>
+      <p class="muted" style="margin-top:8px; color:rgba(255,255,255,.85);">
+        CMOS transistor-level implementation, layout optimization, and post-layout timing analysis.
+      </p>
+    </div>
+
   </div>
 
-  <section class="grid" style="margin-top:16px;">
+</section>
+  
+<!-- Page header card -->
+<div class="card" style="margin-top:16px;">
+  <h2 class="h2">Project Overview</h2>
+  <p>
+    Designed and implemented an 8-bit ripple-carry adder at the CMOS transistor level,
+    including physical layout, routing optimization, and post-layout timing analysis.
+    The project emphasized modular architecture, layout symmetry, and propagation delay evaluation.
+  </p>
+</div>
 
-    <article class="card col-12">
-      <h2 class="h2">Planning and Collaboration</h2>
-      <p>[Insert Text Here 2]</p>
+  <!-- Optional quick stats row -->
+  <div class="grid" style="margin-top:12px;">
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Tools:</strong> Microwind, LTspice</p>
+    </div>
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Domain:</strong> CMOS VLSI, Layout, Timing</p>
+    </div>
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Focus:</strong> Modularity, Symmetry, Delay</p>
+    </div>
+  </div>
+</div>
 
-      <!-- Two-column layout inside this card -->
-      <section class="grid" style="margin-top:12px;">
+<section class="grid" style="margin-top:16px;">
 
-        <div class="col-7">
-          <p>paragraph 1</p>
-          <p>paragraph 2</p>
-          <p>paragraph 3</p>
-          <p>paragraph 4</p>
-        </div>
+  <!-- 1) Your Role / Contributions -->
+  <article class="card col-12">
+    <h2 class="h2">My Role and Contributions</h2>
+    <p>
+      I proposed the layout strategy and implemented the transistor-level physical design in Microwind, including
+      iterative optimization and post-layout simulation. Luke implemented the LTspice schematic-level design and
+      simulation. Shivani managed the timeline, supported integration needs, wrote the paper, and analyzed Microwind
+      simulation outputs.
+    </p>
+    
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">My Contribution</h3>
+       <div class="col-5">
+        <img
+          src="../assets/8-bitFullAdder/Sloan.jpg"
+          alt="Microwind 8-bit full adder layout"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+      </div>
+        <ul>
+          <li>Layout architecture proposal (modular 1-bit cell → scalable 8-bit design)</li>
+          <li>Microwind transistor-level layout + routing</li>
+          <li>Layout optimization (symmetry, compactness, cleaner routing)</li>
+          <li>Post-layout simulation + timing validation</li>
+        </ul>
+       <figure>
+        <img 
+          src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
+          alt="Initial Layout"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+        <figcaption class="muted" style="margin-top:8px;">
+          Figure 1. My proposed top-level diagram for chip layout.
+        </figcaption>
+      </figure>
+      </div>
 
-        <div class="col-5">
-          <img
-            src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
-            alt="Microwind 8-bit full adder layout"
-            style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-          >
+      <div class="col-6">
+        <h3 class="h3">What the team delivered</h3>
+        <figure>
+        <img 
+          src="../assets/8-bitFullAdder/Group_1.jpg"
+          alt="Group Photo"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+        <figcaption class="muted" style="margin-top:8px;">
+          Figure 2. From left to right: Shivani Mruthyunjaya, Sloan Louden-Robins, Luke Scarpato
+        </figcaption>
+      </figure>
+        <ul>
+          <li>LTspice schematic + simulation validation (Luke)</li>
+          <li>Timeline, documentation, and simulation analysis (Shivani)</li>
+          <li>Final report and results packaging (team)</li>
+        </ul>
+      </div>
+    </div>
+  </article>
 
-          <img
-            src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
-            alt="Microwind 1-bit adder layout"
-            style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-          >
-        </div>
+  <!-- 2) Planning & Collaboration -->
+  <article class="card col-12">
+    <h2 class="h2">Planning and Collaboration</h2>
 
-      </section>
-    </article>
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <p>
+          Use this section to show that you can run a project like an engineer: define scope, split work, and
+          validate assumptions early.
+        </p>
 
-  </section>
+        <h3 class="h3">Workflow</h3>
+        <ul>
+          <li>Defined the 1-bit full adder cell as the repeatable module</li>
+          <li>Split validation: LTspice for functional behavior, Microwind for physical + post-layout timing</li>
+          <li>Weekly check-ins to align schematic assumptions with layout constraints</li>
+          <li>Tracked changes and decisions (layout iterations, routing edits, simulation cases)</li>
+        </ul>
+
+        <h3 class="h3">Team roles</h3>
+        <ul>
+          <li><strong>Me:</strong> Microwind layout + optimization + post-layout simulation</li>
+          <li><strong>Luke:</strong> LTspice schematic + simulation</li>
+          <li><strong>Shivani:</strong> schedule, documentation, support, and results analysis</li>
+        </ul>
+      </div>
+
+      <div class="col-5">
+        <img
+          src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
+          alt="Microwind 8-bit full adder layout"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+        <img
+          src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
+          alt="Microwind 1-bit full adder layout"
+          style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+      </div>
+    </div>
+  </article>
+
+  <!-- 3) Architecture -->
+  <article class="card col-12">
+    <h2 class="h2">Architecture</h2>
+    <p>
+      Explain the design at a high level: how the 1-bit cell works and how it scales into the 8-bit ripple-carry.
+      Keep it skimmable—this is where recruiters decide if the project is “real.”
+    </p>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">1-bit Full Adder Building Block</h3>
+        <ul>
+          <li>Inputs: A, B, Cin</li>
+          <li>Outputs: Sum, Cout</li>
+          <li>Implemented at CMOS transistor level (pull-up/pull-down networks)</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3 class="h3">8-bit Ripple-Carry Integration</h3>
+        <ul>
+          <li>Chained Cout → next stage Cin (carry propagation path)</li>
+          <li>Modular repetition for consistent routing and symmetry</li>
+          <li>Worst-case delay dominated by carry chain</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Optional architecture image -->
+    <!--
+    <img
+      src="../assets/8-bitFullAdder/architecture.png"
+      alt="8-bit ripple carry architecture diagram"
+      style="width:100%; height:auto; display:block; margin-top:12px; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+    >
+    -->
+  </article>
+
+  <!-- 4) Layout Strategy -->
+  <article class="card col-12">
+    <h2 class="h2">Layout Strategy (Microwind)</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <h3 class="h3">Goals</h3>
+        <ul>
+          <li>Maintain symmetry to reduce mismatch and simplify routing</li>
+          <li>Minimize long interconnects to reduce parasitics</li>
+          <li>Keep power/ground distribution clean and repeatable</li>
+        </ul>
+
+        <h3 class="h3">Implementation choices</h3>
+        <ul>
+          <li>Standardized the 1-bit layout so it tiles cleanly across 8 stages</li>
+          <li>Routed carry nets deliberately (since they dominate delay)</li>
+          <li>Used consistent transistor orientation where possible</li>
+        </ul>
+      </div>
+
+      <div class="col-5">
+        <!-- Replace with your best “clean layout” screenshot -->
+        <img
+          src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
+          alt="Microwind 8-bit adder layout (optimized routing and symmetry)"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+      </div>
+    </div>
+  </article>
+
+  <!-- 5) Optimization -->
+  <article class="card col-12">
+    <h2 class="h2">Routing Optimization and Iteration</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <p>
+          This is where you show engineering maturity: what you changed, why you changed it, and what improved.
+        </p>
+
+        <h3 class="h3">What I optimized</h3>
+        <ul>
+          <li>Reduced routing congestion in high-fanout regions</li>
+          <li>Shortened critical interconnect paths (carry chain focus)</li>
+          <li>Improved layout regularity for easier verification</li>
+        </ul>
+
+        <h3 class="h3">How I validated improvements</h3>
+        <ul>
+          <li>Re-ran post-layout simulation after each major routing/layout change</li>
+          <li>Compared propagation delay across iterations</li>
+          <li>Checked for functional correctness under expected input patterns</li>
+        </ul>
+      </div>
+
+      <div class="col-5">
+        <!-- Swap with an “before/after” image if you have it -->
+        <!--
+        <img
+          src="../assets/8-bitFullAdder/optimization_before_after.png"
+          alt="Before and after routing optimization"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+        -->
+        <p class="muted" style="margin-top:0;">
+          Optional: add a before/after figure here to make the optimization real.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 6) Post-Layout Simulation & Timing -->
+  <article class="card col-12">
+    <h2 class="h2">Post-Layout Simulation and Timing Analysis</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <h3 class="h3">What I measured</h3>
+        <ul>
+          <li>Propagation delay (critical path dominated by carry propagation)</li>
+          <li>Functional timing consistency across stages</li>
+          <li>Post-layout effects (parasitics reflected in timing behavior)</li>
+        </ul>
+
+        <h3 class="h3">Test approach</h3>
+        <ul>
+          <li>Targeted worst-case carry chain switching scenarios</li>
+          <li>Compared Sum/Cout transitions across bit positions</li>
+          <li>Documented observed delay trends and bottlenecks</li>
+        </ul>
+      </div>
+
+      <div class="col-5">
+        <!-- Replace with your timing plot screenshot -->
+        <!--
+        <img
+          src="../assets/8-bitFullAdder/timing_plot.png"
+          alt="Post-layout timing plot showing propagation delay"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+        -->
+        <p class="muted" style="margin-top:0;">
+          Add your best Microwind simulation plot here (delay is your proof).
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 7) Results -->
+  <article class="card col-12">
+    <h2 class="h2">Results</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">Performance Summary</h3>
+        <ul>
+          <li><strong>Propagation delay:</strong> [insert value + conditions]</li>
+          <li><strong>Worst-case scenario:</strong> [insert pattern or description]</li>
+          <li><strong>Key bottleneck:</strong> carry chain interconnect + switching</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3 class="h3">What improved after optimization</h3>
+        <ul>
+          <li>[ex: reduced routing length on carry net]</li>
+          <li>[ex: cleaner power/ground distribution]</li>
+          <li>[ex: more consistent stage-to-stage timing]</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px;">
+      Tip: even 2–3 concrete numbers (delay, area estimate, stage delay trend) makes this section feel “industry real.”
+    </p>
+  </article>
+
+  <!-- 8) Key Takeaways -->
+  <article class="card col-12">
+    <h2 class="h2">Key Takeaways</h2>
+    <ul>
+      <li>Physical layout decisions directly impact timing through parasitics and interconnect length.</li>
+      <li>Modular cell design makes scaling (1-bit → 8-bit) cleaner and easier to verify.</li>
+      <li>Optimization is an iterative loop: route → simulate → revise → re-simulate.</li>
+    </ul>
+  </article>
+
+</section>
+
+</main>
 
 </main>
 
