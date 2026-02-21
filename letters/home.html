@@ -15,17 +15,31 @@
       <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
     </div>
 
-    <!-- Note ../ because this page is inside /letters -->
+    <!-- Project-page navbar (note ../ for root pages) -->
     <nav class="navlinks">
       <a class="btn" href="../home.html">Home</a>
 
-    <div class="dropdown">
-      <button class="btn">Letters ▾</button>
-      <div class="dropdown-menu">
-        <a href="home.html">All Letters</a>
-        <a href="academic.html">Academic</a>
-        <a href="professional.html">Professional</a>
+      <div class="dropdown">
+        <button class="btn" aria-haspopup="true" aria-expanded="false">
+          Letters ▾
+        </button>
+        <div class="dropdown-menu" role="menu" aria-label="Projects navigation">
+          <a href="letters/home.html">All Letters</a>
+          <a href="letters/academic.html">Academic</a>
+          <a href="letters/professional.html">Professional</a>
+        </div>
       </div>
+
+      <div class="dropdown">
+        <button class="btn" aria-haspopup="true" aria-expanded="false">
+          Menu ▾
+        </button>
+        <div class="dropdown-menu" role="menu" aria-label="Site navigation">
+          <a href="../projects/home.html">Projects</a>
+          <a href="../research.html">Research</a>
+          <a href="../resume.html">Resume</a>
+          <a href="../contact.html">Contact</a>
+        </div>
       </div>
     </nav>
   </div>
