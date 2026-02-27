@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | K. Sloan Louden-Robins</title>
+  <title>Foundation Monitoring System | K. Sloan Louden-Robins</title>
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
@@ -15,17 +15,13 @@
       <span>EE + Applied Math • Embedded • Sensors • Signal Processing</span>
     </div>
 
-    <!-- Project-page navbar (note ../ for root pages) -->
     <nav class="navlinks">
       <a class="btn" href="../home.html">Home</a>
 
       <div class="dropdown">
-        <button class="btn" aria-haspopup="true" aria-expanded="false">
-          Projects ▾
-        </button>
+        <button class="btn" aria-haspopup="true" aria-expanded="false">Projects ▾</button>
         <div class="dropdown-menu" role="menu" aria-label="Projects navigation">
           <a href="home.html">All Projects</a>
-          <a href="foundation-monitoring.html">Foundation Monitoring System</a>
           <a href="HAB-scatter-detector.html">Space Lab / HAB</a>
           <a href="VLSI-8bit-full-adder.html">VLSI 8-bit Adder</a>
           <a href="PID-controls.html">PID / Controls</a>
@@ -33,12 +29,11 @@
       </div>
 
       <div class="dropdown">
-        <button class="btn" aria-haspopup="true" aria-expanded="false">
-          Menu ▾
-        </button>
+        <button class="btn" aria-haspopup="true" aria-expanded="false">Menu ▾</button>
         <div class="dropdown-menu" role="menu" aria-label="Site navigation">
           <a href="../research.html">Research</a>
           <a href="../resume.html">Resume</a>
+          <a href="../letters/home.html">Letters</a>
           <a href="../contact.html">Contact</a>
         </div>
       </div>
@@ -47,12 +42,47 @@
 </header>
 
 <main class="container">
-  <div class="card">
-    <h1 class="h1">As Above So Below - Foundation Monitoring System</h1>
-    <p class="muted">
-      [Insert project description here]
-    </p>
-    
+
+  <!-- Hero Section -->
+<section class="card" style="padding:0; overflow:hidden;">
+
+  <div style="position:relative;">
+
+    <!-- Hero Image -->
+    <img
+      src="../PICTURE PATH HERE"
+      alt="TITLE OF PICTURE"
+      style="width:100%; height:auto; display:block;"
+    >
+
+    <!-- Optional overlay -->
+    <div style="
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      padding:24px;
+      background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
+    ">
+      <h1 class="h1" style="margin:0; color:white;">
+        [PROJECT TITLE]
+      </h1>
+      <p class="muted" style="margin-top:8px; color:rgba(255,255,255,.85);">
+        [BRIEF DESCRIPTION HERE]
+      </p>
+    </div>
+
+  </div>
+
+</section>
+  
+<!-- Page header card -->
+<div class="card" style="margin-top:16px;">
+  <h2 class="h2">Project Overview</h2>
+  <p>
+   [INSERT TEXT HERE]
+  </p>
+</div
 <div style="position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.12); margin-top:16px;">
   <iframe
     src="https://www.youtube.com/embed/hQlcKNhDb_U"
@@ -62,29 +92,323 @@
     allowfullscreen
   ></iframe>
 </div>
-  
-  <section class="grid" style="margin-top:16px;">
-    <!-- Card 1 -->
-    <article class="card col-12">
-      <h2 class="h2">Foundation Monitoring System</h2>
-      <p class="muted">Multi-sensor displacement monitoring • Real-time pipeline • UI visualization</p>
+  <!-- Optional quick stats row -->
+  <div class="grid" style="margin-top:12px;">
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Tools:</strong> [SOFTWARE USED]</p>
+    </div>
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Domain:</strong> [FEW DESCRIPTORS]</p>
+    </div>
+    <div class="col-4">
+      <p class="muted" style="margin:0;"><strong>Focus:</strong> [FEW DESCRIPTORS]</p>
+    </div>
+  </div>
+</div>
 
-      <p>
-        Built and validated a scalable data-processing workflow for IMU, ToF, radar, and auxiliary sensors.
-        Focused on filtering, time alignment, and producing a stable displacement metric for visualization and alerting.
-      </p>
+<section class="grid" style="margin-top:16px;">
 
-      <div class="tagrow">
-        <span class="tag">MQTT</span>
-        <span class="tag">InfluxDB/Grafana</span>
-        <span class="tag">Kalman/Hampel/EMA</span>
-        <span class="tag">Sensor Fusion</span>
-      </div>
-  </main>
+  <!-- 1) TOPIC 1 -->
+  <article class="card col-12">
+    <h2 class="h2">TITLE OF TOPIC 1</h2>
+    <p>
+    [INSERT TEXT HERE]
+    </p>
+    
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">TOPIC</h3>
+       <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
       
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 1. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+
+      <div class="col-6">
+        <h3 class="h3">TOPIC</h3>
+        <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 2. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2) TOPIC 2 -->
+  <article class="card col-12">
+    <h2 class="h2">TITLE OF TOPIC 2</h2>
+
+<div class="grid" style="margin-top:12px;">
+
+ <!-- LEFT COLUMN -->
+<div class="col-7">
+  <p>
+    [INSERT TEXT HERE]
+  </p>
+
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+</div>
+
+<!-- RIGHT COLUMN -->
+<div class="col-5">
+  <figure>
+    <img 
+      src="../PICTURE PATH HERE"
+      alt="TITLE OF PICTURE"
+      style="width:100%; height:auto; display:block; border-radius:14px;"
+    >
+    <figcaption class="uted" style="font-size:0.85rem;">
+      Figure 3. [INSERT CAPTION HERE]
+    </figcaption>
+  </figure>
+</div>
+  
+</div>
+</article>
+
+  <!-- 3) TOPIC 3 -->
+  <article class="card col-12">
+    <h2 class="h2">TITLE OF TOPIC 3</h2>
+    <p>
+     [INSERT TEXT HERE]
+    </p>
+    
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">PICTURE TITLE</h3>
+        <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 4. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3 class="h3">TOPIC</h3>
+        <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 5. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4) TOPIC -->
+  <article class="card col-12">
+    <h2 class="h2">TITLE OF TOPIC 4</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+
+        <h3 class="h3">TOPIC</h3>
+        <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 6. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+        <figure>
+        <img 
+          src="../PICTURE PATH HERE"
+          alt="TITLE OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px;"
+        >
+      
+         <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 7. [INSERT CAPTION HERE]
+        </figcaption>
+      </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- 5) TOPIC -->
+  <article class="card col-12">
+    <h2 class="h2">[TITLE OF TOPIC 5]</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <p>
+          [insert text]
+        </p>
+
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- 6) TOPIC -->
+  <article class="card col-12">
+    <h2 class="h2">[TITLE OF TOPIC 6]</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-7">
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+
+        <h3 class="h3">[TOPIC]</h3>
+        <ul>
+          <li>[1]</li>
+          <li>[2]</li>
+          <li>[3]</li>
+        </ul>
+      </div>
+
+      <div class="col-5">
+        <img
+          src="../PICTURE PATH HERE"
+          alt="NAME OF PICTURE"
+          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+        >
+      </div>
+    </div>
+  </article>
+
+  <!-- 7) Results -->
+  <article class="card col-12">
+    <h2 class="h2">Results</h2>
+
+    <div class="grid" style="margin-top:12px;">
+      <div class="col-6">
+        <h3 class="h3">Performance Summary</h3>
+        <ul>
+          <li><strong>[point 1]:</strong> [insert value + conditions]</li>
+          <li><strong>[point 2]:</strong> [insert pattern or description]</li>
+          <li><strong>[point 3]:</strong> [insert text here]</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3 class="h3">[INSERT TEXT HERE]</h3>
+        <ul>
+          <li>[topic 1]</li>
+          <li>[topic 2]</li>
+          <li>[topic 3]</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+</section>
+  
+<article class="card col-12">
+  <h2 class="h2">Full Technical Report</h2>
+  <p>
+    The complete project documentation, [INSERT TEXT HERE] is available below.
+  </p>
+<div style="margin-top:12px;">
+  <a href="../PDF PATH HERE" target="_blank" class="btn">
+    View Report
+  </a>
+
+  <a href="../PDF PATH HERE" download class="btn" style="margin-left:8px;">
+    Download PDF
+  </a>
+</div>
+</article>
+</main>
+
+</main>
+
 <footer class="container">
   <small>© <span id="y"></span> Kimberly Sloan Louden-Robins</small>
 </footer>
+
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
 </script>
