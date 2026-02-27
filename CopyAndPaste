@@ -478,7 +478,7 @@
 
 <footer class="container">
   <small>© <span id="y"></span> Kimberly Sloan Louden-Robins</small>
-</footer>
+</footer> 
 
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
