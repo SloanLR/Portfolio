@@ -65,10 +65,10 @@
       background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
     ">
       <h1 class="h1" style="margin:0; color:white;">
-        [PROJECT TITLE]
+        Tuned Analog PID Controller 
       </h1>
       <p class="muted" style="margin-top:8px; color:rgba(255,255,255,.85);">
-        [BRIEF DESCRIPTION HERE]
+        Designed and simulated an analog PID controller for a 3rd-order plant; achieved ~59% faster time-to-peak and ~2% overshoot while matching MATLAB and LTSpice results.
       </p>
     </div>
 
@@ -80,100 +80,106 @@
 <div class="card" style="margin-top:16px;">
   <h2 class="h2">Project Overview</h2>
   <p>
-   [INSERT TEXT HERE]
+   This project implements a tuned analog PID controller for a third-order plant with poles at 70, 90, and 100 rad/s. I modeled the plant in MATLAB,
+    verified frequency and time-domain behavior, and then implemented the equivalent circuit in LTSpice. I designed the controller using classical 
+    techniques (frequency response + root locus) and validated tuning approaches including Ziegler–Nichols variants and a custom tuning strategy. 
+    The final tuned controller achieved a ~58.9% reduction in time-to-peak, ~39.7% reduction in settling time, and ~2% overshoot, with strong 
+    agreement between MATLAB and LTSpice.
   </p>
 </div>
 
   <!-- Optional quick stats row -->
   <div class="grid" style="margin-top:12px;">
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Tools:</strong> [SOFTWARE USED]</p>
+      <p class="muted" style="margin:0;"><strong>Tools:</strong> MATLAB (Control System Toolbox), LTSpice</p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Domain:</strong> [FEW DESCRIPTORS]</p>
+      <p class="muted" style="margin:0;"><strong>Domain:</strong> Classical control, analog circuit simulation</p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Focus:</strong> [FEW DESCRIPTORS]</p>
+      <p class="muted" style="margin:0;"><strong>Focus:</strong> PID tuning, model validation, transient performance</p>
     </div>
   </div>
 </div>
 
 <section class="grid" style="margin-top:16px;">
 
-  <!-- 1) TOPIC 1 -->
+  <!-- 1) Plant Modeling + Validation -->
   <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 1</h2>
+    <h2 class="h2">Plant Modeling + Validation</h2>
     <p>
     [INSERT TEXT HERE]
     </p>
     
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
-        <h3 class="h3">TOPIC</h3>
+        <h3 class="h3">Plant Implementation</h3>
        <figure>
         <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
+          src="../assets/PID/plant.png"
+          alt="Plant Implementation"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 1. [INSERT CAPTION HERE]
+          Figure 1. Third-order plant implemented as cascaded RC stages (pole frequencies mapped to component values).
         </figcaption>
       </figure>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Implemented poles using C = 1/(Rωp) with 𝑅 = 1𝑘Ω</li>
+          <li>Verified stability and expected roll-off behavior</li>
+          <li>Structured the plant as modular stages for debugging</li>
         </ul>
       </div>
 
       <div class="col-6">
-        <h3 class="h3">TOPIC</h3>
+        <h3 class="h3">Frequency-Domain Verification</h3>
         <figure>
         <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
+          src="../assets/PID/plant_bode.png"
+          alt="Plant Bode Plot"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
          <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 2. [INSERT CAPTION HERE]
+          Figure 2. LTSpice Bode plot confirming third-order behavior and matching key magnitudes at selected frequencies.
         </figcaption>
       </figure>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Checked magnitude agreement at 3 reference frequencies (low/mid/high)</li>
+          <li>Confirmed expected roll-off and phase trend for 3 poles</li>
+          <li>Used results to validate plant model before controller design</li>
         </ul>
       </div>
     </div>
   </article>
 
-  <!-- 2) TOPIC 2 -->
+  <!-- 2) Controller Design Approach -->
   <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 2</h2>
+    <h2 class="h2">Controller Design Approach</h2>
 
 <div class="grid" style="margin-top:12px;">
 
  <!-- LEFT COLUMN -->
 <div class="col-7">
   <p>
-    [INSERT TEXT HERE]
+    I used root locus to select closed-loop pole placement consistent with the overshoot constraint and transient goals. 
+    The gain selection was validated by step response simulation, and the design approach was iterated as 
+    integral/derivative action was introduced. This workflow ensured the controller design was driven by pole placement 
+    and verified against time-domain specs, not trial-and-error.
   </p>
 
-        <h3 class="h3">[TOPIC]</h3>
+        <h3 class="h3">Design Targets</h3>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Time-to-peak improvement ≥ 50%</li>
+          <li>Overshoot ≤ 9.48%</li>
         </ul>
 
-        <h3 class="h3">[TOPIC]</h3>
+        <h3 class="h3">Methods Used</h3>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Root locus + damping ratio targeting</li>
+          <li>Time-domain validation with step response</li>
+          <li>Tuning comparison (Z-N variants + custom tuning + Skogestad)</li>
         </ul>
 </div>
 
@@ -181,12 +187,12 @@
 <div class="col-5">
   <figure>
     <img 
-      src="../PICTURE PATH HERE"
-      alt="TITLE OF PICTURE"
+      src="../assets/PID/root_locus.png"
+      alt="Root Locus"
       style="width:100%; height:auto; display:block; border-radius:14px;"
     >
     <figcaption class="uted" style="font-size:0.85rem;">
-      Figure 3. [INSERT CAPTION HERE]
+      Figure 3. Root locus used to select gain and dominant pole placement to meet damping/overshoot targets.
     </figcaption>
   </figure>
 </div>
