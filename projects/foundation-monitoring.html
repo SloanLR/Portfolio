@@ -233,7 +233,7 @@
 
       <figure>
         <img 
-          src="../assets/foundation-monitoring/SDD1_S.jpg"
+          src="../assets/AASB/SDD1_S.jpg"
           alt="Sloan Louden-Robins presenting the project at Design Day"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
@@ -284,7 +284,64 @@
         swap sensing modalities (IMU, ToF, radar, moisture/pressure) while
         keeping the same acquisition and analytics framework.
       </p>
+<div style="margin-top:20px; text-align:center;">
 
+<svg width="100%" height="140" viewBox="0 0 900 140">
+
+  <!-- Sensor Nodes -->
+  <rect x="20" y="40" width="140" height="50" rx="10"
+  fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.25)"/>
+  <text x="90" y="70" fill="white" font-size="14" text-anchor="middle">
+  Sensor Nodes
+  </text>
+
+  <!-- Arrow -->
+  <line x1="160" y1="65" x2="250" y2="65"
+  stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+  <polygon points="250,65 240,60 240,70"
+  fill="rgba(255,255,255,.6)"/>
+
+  <!-- Wireless -->
+  <rect x="250" y="40" width="140" height="50" rx="10"
+  fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.25)"/>
+  <text x="320" y="70" fill="white" font-size="14" text-anchor="middle">
+  Wireless Telemetry
+  </text>
+
+  <!-- Arrow -->
+  <line x1="390" y1="65" x2="480" y2="65"
+  stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+  <polygon points="480,65 470,60 470,70"
+  fill="rgba(255,255,255,.6)"/>
+
+  <!-- Gateway -->
+  <rect x="480" y="40" width="140" height="50" rx="10"
+  fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.25)"/>
+  <text x="550" y="70" fill="white" font-size="14" text-anchor="middle">
+  Raspberry Pi Hub
+  </text>
+
+  <!-- Arrow -->
+  <line x1="620" y1="65" x2="710" y2="65"
+  stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+  <polygon points="710,65 700,60 700,70"
+  fill="rgba(255,255,255,.6)"/>
+
+  <!-- Dashboard -->
+  <rect x="710" y="40" width="160" height="50" rx="10"
+  fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.25)"/>
+  <text x="790" y="70" fill="white" font-size="14" text-anchor="middle">
+  Monitoring Dashboard
+  </text>
+
+</svg>
+
+<p class="muted" style="font-size:0.85rem; margin-top:6px;">
+Figure. Simplified system architecture showing distributed sensor nodes,
+wireless telemetry, central gateway aggregation, and monitoring interface.
+</p>
+
+</div>
       <h3 class="h3">End-to-End Flow</h3>
       <ol style="margin-top:8px;">
         <li><strong>Sense:</strong> Node reads sensors and timestamps measurements.</li>
@@ -307,7 +364,7 @@
         <li><strong>Topics by sensor:</strong> Clear topic naming (per node / per sensor) to keep multi-sensor streams organized.</li>
       </ul>
 
-      <!-- Optional: small callout that reads like an engineering spec -->
+      <!-- Optional: small callout  -->
       <div class="card" style="margin-top:12px; padding:12px; border:1px solid rgba(255,255,255,.12);">
         <h3 class="h3" style="margin-top:0;">System Performance (Representative)</h3>
         <ul style="margin:0;">
@@ -322,7 +379,7 @@
     <div class="col-5">
       <figure>
         <img
-          src="../assets/foundation-monitoring/SDD1.jpg"
+          src="../assets/AASB/SDD1.jpg"
           alt="Foundation monitoring system demo setup with poster and bench"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
@@ -364,7 +421,7 @@
 
       <figure>
         <img 
-          src="../assets/foundation-monitoring/PCB_IMU.JPG"
+          src="../assets/AASB/PCB_IMU.JPG"
           alt="Custom PCB used for IMU-based sensor node"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
@@ -391,7 +448,7 @@
 
       <figure>
         <img 
-          src="../assets/foundation-monitoring/SDD2_WS.JPG"
+          src="../assets/AASB/SDD2_WS.JPG"
           alt="Prototype testing setup for foundation monitoring system"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
@@ -432,7 +489,7 @@
 
       <figure>
         <img 
-          src="../assets/foundation-monitoring/SDD2_WS.JPG"
+          src="../assets/AASB/SDD2_WS.JPG"
           alt="Laboratory sensor testing setup"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
@@ -451,7 +508,7 @@
 
       <figure>
         <img 
-          src="../assets/foundation-monitoring/SDD1.jpg"
+          src="../assets/AASB/SDD1.jpg"
           alt="Sensor system demonstration and testing environment"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
