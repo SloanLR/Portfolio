@@ -106,10 +106,11 @@
   <article class="card col-12">
     <h2 class="h2">My Role and Contributions</h2>
     <p>
-      I proposed the layout strategy and implemented the transistor-level physical design in Microwind, including
-      iterative optimization and post-layout simulation. Luke implemented the LTspice schematic-level design and
-      simulation. Shivani managed the timeline, supported integration needs, wrote the paper, and analyzed Microwind
-      simulation outputs.
+    I proposed the layout architecture and led the physical implementation of the design in Microwind,
+    translating the LTSpice schematic into a transistor-level CMOS layout and iteratively optimizing routing
+    and symmetry. Luke developed the LTSpice schematic and performed pre-layout simulation, while Shivani
+    coordinated the project timeline, supported integration tasks, authored the final report, and analyzed
+    the post-layout simulation results.
     </p>
     
     <div class="grid" style="margin-top:12px;">
@@ -135,7 +136,7 @@
       </div>
 
       <div class="col-6">
-        <h3 class="h3">What the team delivered</h3>
+        <h3 class="h3">Team Contributions</h3>
         <figure>
         <img 
           src="../assets/8-bitFullAdder/Group_1.jpg"
@@ -156,37 +157,36 @@
     </div>
   </article>
 
-  <!-- 2) Planning & Collaboration -->
-  <article class="card col-12">
-    <h2 class="h2">Planning and Collaboration</h2>
+<!-- 2) Planning & Collaboration -->
+<article class="card col-12">
+  <h2 class="h2">Planning and Collaboration</h2>
 
 <div class="grid" style="margin-top:12px;">
 
  <!-- LEFT COLUMN -->
 <div class="col-7">
   <p>
-    The project was structured as a staged engineering workflow, beginning with architectural
-    definition before physical implementation.
-    We first defined scope: implement and verify a transistor-level 1-bit full adder, then scale
-    it to an 8-bit ripple-carry architecture with both schematic-level and post-layout validation. 
-    Rather than immediately building the full 8-bit system, we validated the 1-bit cell in LTSpice 
-    to confirm logical correctness and timing behavior before committing to layout.
+    The project followed a staged engineering workflow that separated architectural design,
+    schematic validation, and physical implementation. We first defined and verified a
+    transistor-level 1-bit full adder in LTSpice before scaling the design into an 8-bit
+    ripple-carry architecture. This approach ensured logical correctness and timing behavior
+    were validated prior to committing to physical layout in Microwind.
   </p>
 
-  <h3 class="h3">Workflow</h3>
+  <h3 class="h3">Engineering Workflow</h3>
   <ul>
-    <li><strong>Defined the 1-bit full adder cell</strong> as the repeatable module (transistor-level CMOS)</li>
-    <li><strong>Split validation:</strong> LTSpice for pre-layout functional + timing baseline, MicroWind for physical layout + post-layout timing</li>
-    <li><strong>Iterated architecture → schematic → layout:</strong> confirmed NAND-based logic transformations before committing to routing</li>
-    <li><strong>Measured critical timing behavior:</strong> tracked carry-chain delay across stages (ripple propagation)</li>
-    <li><strong>Tracked changes and decisions:</strong> layout iterations, routing edits (Metal2 usage), and simulation cases</li>
+    <li><strong>Architecture definition:</strong> designed a modular 1-bit full adder cell as the scalable building block</li>
+    <li><strong>Schematic validation:</strong> implemented and simulated the design in LTSpice to confirm logic correctness and baseline timing</li>
+    <li><strong>Physical implementation:</strong> translated the schematic into transistor-level CMOS layout in Microwind</li>
+    <li><strong>Optimization loop:</strong> iterated routing, symmetry, and layout organization to reduce parasitics and congestion</li>
+    <li><strong>Post-layout verification:</strong> simulated the final layout to analyze propagation delay and carry-chain behavior</li>
   </ul>
 
-  <h3 class="h3">Team roles</h3>
+  <h3 class="h3">Team Roles</h3>
   <ul>
-    <li><strong>Me:</strong> proposed the 8-bit tiling layout, implemented CMOS layout in MicroWind, optimized routing/symmetry, and ran post-layout simulation</li>
-    <li><strong>Luke:</strong> built the LTSpice schematic (gate + transistor level) and ran pre-layout simulations</li>
-    <li><strong>Shivani:</strong> managed project schedule, authored documentation, assisted as needed, and analyzed MicroWind simulation results</li>
+    <li><strong>Sloan Louden-Robins:</strong> proposed the modular layout architecture, implemented the Microwind CMOS layout, optimized routing and symmetry, and ran post-layout simulations</li>
+    <li><strong>Luke Scarpato:</strong> implemented the LTSpice schematic and performed functional and timing simulations</li>
+    <li><strong>Shivani Mruthyunjaya:</strong> coordinated project timeline, supported integration tasks, authored documentation, and analyzed simulation results</li>
   </ul>
 </div>
 
@@ -195,11 +195,11 @@
   <figure>
     <img 
       src="../assets/8-bitFullAdder/VLSI_Layout_PLAN.jpg"
-      alt="Initial Layout"
+      alt="Initial layout architecture plan"
       style="width:100%; height:auto; display:block; border-radius:14px;"
     >
     <figcaption class="muted" style="font-size:0.85rem;">
-      Figure 3. Proposed top-level diagram showing modular 1-bit full adder cell tiling.
+      Figure 3. Early architecture sketch illustrating modular tiling of the 1-bit full adder cell for 8-bit scaling.
     </figcaption>
   </figure>
 </div>
@@ -207,216 +207,216 @@
 </div>
 </article>
 
-  <!-- 3) Architecture -->
-  <article class="card col-12">
-    <h2 class="h2">Architecture</h2>
-    <p>
-      The design is built around a modular 1-bit CMOS full adder cell that computes
-      Sum = A ⊕ B ⊕ C<sub>in</sub> and C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub>,
-      implemented at the transistor level using complementary pull-up and pull-down networks.
-      Eight identical cells are cascaded in a ripple-carry configuration, where
-      each stage’s carry-out feeds the next stage’s carry-in, forming a carry chain whose worst-case delay scales linearly with bit width.
-    </p>
-    
- <h3 class="h3">Design theory (LTSpice)</h3>    
+<!-- 3) Architecture -->
+<article class="card col-12">
+  <h2 class="h2">Architecture</h2>
+  <p>
+    The design is built around a modular 1-bit CMOS full adder cell that computes 
+    <strong>Sum = A ⊕ B ⊕ C<sub>in</sub></strong> and 
+    <strong>C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub></strong>. 
+    Each cell is implemented at the transistor level using complementary pull-up (PMOS) and pull-down (NMOS) networks. 
+    Eight identical cells are cascaded to form a ripple-carry architecture, where the carry-out of each stage feeds the next stage's carry-in.
+    In the worst case, the carry must propagate through all stages, producing a delay that scales approximately linearly with bit width.
+  </p>
+
+ <h3 class="h3">Design Theory (LTSpice)</h3>    
   <ul>
-    <li>
-      <strong>1-bit full adder function:</strong>
-      <span style="white-space:nowrap;"><em>Sum</em> = A ⊕ B ⊕ C<sub>in</sub></span>,
-      <span style="white-space:nowrap;"><em>C</em><sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub></span>
-    </li>
-    <li>
-      <strong>Implementation detail:</strong> logic rewritten using NAND-based equivalents (DeMorgan “bubble pushing”) and built as complementary CMOS
-      (PMOS pull-up + NMOS pull-down) in LTSpice.
-    </li>
-    <li>
-      <strong>Carry-chain behavior:</strong> eight identical 1-bit cells are cascaded:
-      <span style="white-space:nowrap;">C<sub>out0</sub> → C<sub>in1</sub> → … → C<sub>in7</sub> → C<sub>out7</sub></span>.
-      Worst-case delay occurs when carry must propagate through all stages.
-    </li>
-    <li>
-      <strong>Timing expectation:</strong>
-      <span style="white-space:nowrap;">t<sub>pd,total</sub> ≈ N · t<sub>carry</sub></span>
-      (linear scaling for ripple-carry), so LTSpice provides a clean pre-layout baseline before parasitics.
-    </li>
-    <li>
-      <strong>Simulation approach:</strong> pulsed A, B, and C<sub>in</sub> inputs to validate truth-table correctness and measure input→output propagation delay
-      (pre-layout / ideal interconnect).
-    </li>
+    <li><strong>Logic implementation:</strong> Boolean expressions rewritten using NAND-based equivalents (DeMorgan transformations) for efficient CMOS realization.</li>
+    <li><strong>1-bit cell:</strong> transistor-level CMOS implementation producing Sum and Carry outputs from inputs A, B, and C<sub>in</sub>.</li>
+    <li><strong>Scaling strategy:</strong> eight identical cells cascaded (C<sub>out,i</sub> → C<sub>in,i+1</sub>) to form the ripple-carry adder.</li>
+    <li><strong>Timing model:</strong> worst-case propagation delay dominated by the carry chain where 
+    t<sub>pd,total</sub> ≈ N · t<sub>carry</sub>.</li>
   </ul>
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <h3 class="h3">1-bit Full Adder Building Block</h3>
-        <figure>
+
+  <div class="grid" style="margin-top:12px;">
+    <div class="col-6">
+      <h3 class="h3">1-bit Full Adder Building Block</h3>
+      <figure>
         <img 
           src="../assets/8-bitFullAdder/LTSpice_1-bit.png"
-          alt="Luke's 1-bit full adder in LTSpice"
+          alt="1-bit full adder LTSpice schematic"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 4. Luke's implementation of the 1-bit full adder in LTSpice.
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 4. Transistor-level LTSpice implementation of the 1-bit full adder cell.
         </figcaption>
       </figure>
-        <ul>
-          <li>Inputs: A, B, Cin</li>
-          <li>Outputs: Sum, Cout</li>
-          <li>Implemented at CMOS transistor level (pull-up/pull-down networks)</li>
-        </ul>
-      </div>
-      <div class="col-6">
-        <h3 class="h3">8-bit Ripple-Carry Integration</h3>
-        <figure>
+      <ul>
+        <li>Inputs: A, B, C<sub>in</sub></li>
+        <li>Outputs: Sum, C<sub>out</sub></li>
+        <li>CMOS pull-up/pull-down transistor networks</li>
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <h3 class="h3">8-bit Ripple-Carry Integration</h3>
+      <figure>
         <img 
           src="../assets/8-bitFullAdder/LTSpice_8-bit.png"
-          alt="Luke's 8-bit full adder in LTSpice"
+          alt="8-bit ripple carry adder LTSpice schematic"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 5. Luke's implementation of the 8-bit full adder in LTSpice.
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 5. Cascaded 1-bit cells forming the 8-bit ripple-carry adder in LTSpice.
         </figcaption>
       </figure>
-        <ul>
-          <li>Chained Cout → next stage Cin (carry propagation path)</li>
-          <li>Modular repetition for consistent routing and symmetry</li>
-          <li>Worst-case delay dominated by carry chain</li>
-        </ul>
-      </div>
+      <ul>
+        <li>C<sub>out</sub> of each stage drives the next stage’s C<sub>in</sub></li>
+        <li>Modular structure enables straightforward scaling</li>
+        <li>Critical path dominated by carry propagation</li>
+      </ul>
     </div>
-  </article>
+  </div>
+</article>
 
-  <!-- 4) Layout Strategy -->
-  <article class="card col-12">
-    <h2 class="h2">Layout Strategy (Microwind)</h2>
+<!-- 4) Layout Strategy -->
+<article class="card col-12">
+  <h2 class="h2">Layout Strategy (Microwind)</h2>
 
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <h3 class="h3">Goals</h3>
-        <ul>
-          <li>Maintain symmetry to reduce mismatch and simplify routing</li>
-          <li>Minimize long interconnects to reduce parasitics</li>
-          <li>Keep power/ground distribution clean and repeatable</li>
-        </ul>
+  <div class="grid" style="margin-top:12px;">
 
-        <h3 class="h3">Implementation choices</h3>
-        <figure>
+    <!-- LEFT COLUMN -->
+    <div class="col-6">
+      <h3 class="h3">Design Goals</h3>
+      <ul>
+        <li>Preserve layout symmetry to maintain consistent electrical behavior across stages</li>
+        <li>Minimize interconnect length to reduce parasitic resistance and capacitance</li>
+        <li>Maintain clean and repeatable VDD/GND distribution</li>
+        <li>Enable modular tiling of the 1-bit cell for scalable integration</li>
+      </ul>
+
+      <h3 class="h3">Implementation Decisions</h3>
+      <ul>
+        <li>Standardized a compact 1-bit layout that tiles cleanly across 8 stages</li>
+        <li>Routed the carry path deliberately since it dominates the critical delay</li>
+        <li>Maintained consistent transistor orientation to simplify routing</li>
+        <li>Used Metal2 strategically for longer interconnects and crossings</li>
+      </ul>
+
+      <p class="muted">
+        The modular bit-slice layout allows the architecture to scale beyond 8 bits with minimal
+        structural modification, preserving routing consistency and timing behavior.
+      </p>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-6">
+
+      <h3 class="h3">1-bit Layout Cell</h3>
+      <figure>
         <img 
           src="../assets/8-bitFullAdder/1-bit-adder_layout.png"
-          alt="Microwind 1-bit full adder"
+          alt="Microwind 1-bit full adder layout"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 6. My implementation of 1-bit full adder in Microwind.
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 6. Transistor-level CMOS layout of the 1-bit full adder cell in Microwind.
         </figcaption>
       </figure>
-        <ul>
-          <li>Standardized the 1-bit layout so it tiles cleanly across 8 stages</li>
-          <li>Routed carry nets deliberately (since they dominate delay)</li>
-          <li>Used consistent transistor orientation where possible</li>
-        </ul>
-        <figure>
+
+      <h3 class="h3" style="margin-top:16px;">8-bit Integrated Layout</h3>
+      <figure>
         <img 
           src="../assets/8-bitFullAdder/8-bitFullAdder_layout.png"
-          alt="Microwind 8-bit full adder"
+          alt="Microwind 8-bit ripple carry layout"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 7. My implementation of 8-bit full adder in Microwind.
+        <figcaption class="muted" style="font-size:0.85rem;">
+          Figure 7. Eight tiled bit-slices forming the 8-bit ripple-carry adder layout.
         </figcaption>
       </figure>
-      </div>
+
     </div>
-  </article>
 
-  <!-- 5) Optimization -->
-  <article class="card col-12">
-    <h2 class="h2">Routing Optimization and Iteration</h2>
+  </div>
+</article>
 
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <p>
-          [insert text]
-        </p>
+<!-- 5) Optimization -->
+<article class="card col-12">
+  <h2 class="h2">Routing Optimization and Iteration</h2>
 
-        <h3 class="h3">What I optimized</h3>
-        <ul>
-          <li>Reduced routing congestion in high-fanout regions</li>
-          <li>Shortened critical interconnect paths (carry chain focus)</li>
-          <li>Improved layout regularity for easier verification</li>
-        </ul>
+  <div class="grid" style="margin-top:12px;">
+    <div class="col-7">
 
-        <h3 class="h3">How I validated improvements</h3>
-        <ul>
-          <li>Re-ran post-layout simulation after each major routing/layout change</li>
-          <li>Compared propagation delay across iterations</li>
-          <li>Checked for functional correctness under expected input patterns</li>
-        </ul>
-      </div>
+      <p>
+        The physical layout was refined through several iterations to improve routing clarity
+        and reduce delay along the critical carry path. Early layout versions exposed areas of
+        routing congestion and longer interconnect runs, which increased parasitic resistance
+        and capacitance. The design was progressively reorganized to shorten critical signal
+        paths, maintain symmetry between bit-slices, and improve overall layout regularity.
+      </p>
+
+      <h3 class="h3">What I optimized</h3>
+      <ul>
+        <li>Reduced routing congestion in regions with multiple signal crossings</li>
+        <li>Shortened carry-chain interconnects, which dominate worst-case propagation delay</li>
+        <li>Improved bit-slice symmetry to maintain consistent parasitic behavior across stages</li>
+        <li>Standardized routing patterns for easier verification and debugging</li>
+      </ul>
+
+      <h3 class="h3">How I validated improvements</h3>
+      <ul>
+        <li>Re-ran Microwind post-layout simulation after major layout revisions</li>
+        <li>Compared propagation delay across design iterations</li>
+        <li>Verified logical correctness under multiple input switching scenarios</li>
+        <li>Monitored timing consistency along the carry propagation path</li>
+      </ul>
+
     </div>
-  </article>
+  </div>
+</article>
 
-  <!-- 6) Post-Layout Simulation & Timing -->
-  <article class="card col-12">
-    <h2 class="h2">Post-Layout Simulation and Timing Analysis</h2>
+<!-- 6) Post-Layout Simulation & Timing -->
+<article class="card col-12">
+  <h2 class="h2">Post-Layout Simulation and Timing Analysis</h2>
 
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <h3 class="h3">What I measured</h3>
-        <ul>
-          <li>Propagation delay (critical path dominated by carry propagation)</li>
-          <li>Functional timing consistency across stages</li>
-          <li>Post-layout effects (parasitics reflected in timing behavior)</li>
-        </ul>
+  <div class="grid" style="margin-top:12px;">
+    <div class="col-7">
 
-        <h3 class="h3">Test approach</h3>
-        <ul>
-          <li>Targeted worst-case carry chain switching scenarios</li>
-          <li>Compared Sum/Cout transitions across bit positions</li>
-          <li>Documented observed delay trends and bottlenecks</li>
-        </ul>
-      </div>
+      <p>
+        After completing the physical layout, I ran post-layout simulations in Microwind to evaluate
+        timing behavior with real interconnect parasitics. Unlike schematic-level simulation, this
+        stage captures the impact of wire length, routing capacitance, and transistor placement on
+        propagation delay.
+      </p>
 
-      <div class="col-5">
-        <img
-          src="../assets/8-bitFullAdder/A0_All.png"
-          alt="Post-layout timing plot showing propagation delay"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-        >
-        <p class="muted" style="margin-top:0;">
-          [Add best Microwind simulation plot here (delay is proof).]
-        </p>
-      </div>
+      <h3 class="h3">What I measured</h3>
+      <ul>
+        <li>Input-to-output propagation delay along the critical carry chain</li>
+        <li>Timing consistency of Sum and Carry outputs across all 8 stages</li>
+        <li>Effects of routing parasitics on switching behavior</li>
+      </ul>
+
+      <h3 class="h3">Test approach</h3>
+      <ul>
+        <li>Applied synchronized pulse inputs to A, B, and C<sub>in</sub> to trigger carry propagation</li>
+        <li>Observed output transitions across bit positions to identify delay accumulation</li>
+        <li>Compared results against the LTSpice schematic-level timing baseline</li>
+        <li>Identified the carry chain as the dominant contributor to worst-case delay</li>
+      </ul>
+
+      <p class="muted">
+        As expected for ripple-carry architectures, propagation delay increased across stages as the
+        carry signal propagated through the chain. The post-layout results confirmed that interconnect
+        parasitics introduce additional delay compared to ideal schematic simulation.
+      </p>
+
     </div>
-  </article>
 
-  <!-- 7) Results -->
-  <article class="card col-12">
-    <h2 class="h2">Results</h2>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <h3 class="h3">Performance Summary</h3>
-        <ul>
-          <li><strong>Propagation delay:</strong> [insert value + conditions]</li>
-          <li><strong>Worst-case scenario:</strong> [insert pattern or description]</li>
-          <li><strong>Key bottleneck:</strong> carry chain interconnect + switching</li>
-        </ul>
-      </div>
-      <div class="col-6">
-        <h3 class="h3">What improved after optimization</h3>
-        <ul>
-          <li>[topic 1]</li>
-          <li>[topic 2]</li>
-          <li>[topic 3]</li>
-        </ul>
-      </div>
+    <div class="col-5">
+      <img
+        src="../assets/8-bitFullAdder/A0_All.png"
+        alt="Microwind timing waveform showing ripple carry propagation"
+        style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
+      >
+      <p class="muted" style="margin-top:0;">
+        Figure 8. Post-layout Microwind waveform showing carry propagation delay across the 8-bit ripple chain.
+      </p>
     </div>
-  </article>
+  </div>
+</article>
 
-  <!-- 8) Key Takeaways -->
+  <!-- 7) Key Takeaways -->
   <article class="card col-12">
     <h2 class="h2">Key Takeaways</h2>
     <ul>
@@ -444,7 +444,6 @@
   </a>
 </div>
 </article>
-</main>
 
 </main>
 
