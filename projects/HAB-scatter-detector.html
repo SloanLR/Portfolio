@@ -44,15 +44,13 @@
 <main class="container">
 
   <!-- Hero Section -->
-<section class="card" style="padding:0; overflow:hidden;">
-
-    <!-- Hero Image -->
+  <section class="card" style="padding:0; overflow:hidden; position:relative;">
     <img
       src="../assets/HAB/scatter_setup.jpg"
       alt="HAB Scatter Detector PCB and Test Setup"
+      style="width:100%; height:auto; display:block;"
     >
 
-    <!-- Optional overlay -->
     <div style="
       position:absolute;
       bottom:0;
@@ -65,203 +63,91 @@
         HAB Scatter Detector Payload
       </h1>
       <p class="muted" style="margin-top:8px; color:rgba(255,255,255,.85);">
-        Custom PCB-based photodiode scatter detector designed for CO₂ sensing in a high-altitude balloon (HAB) system, 
+        Custom PCB-based photodiode scatter detector designed for CO₂ sensing in a high-altitude balloon (HAB) system,
         integrating analog signal conditioning, embedded processing, and mechanical enclosure design.
       </p>
     </div>
+  </section>
 
+  <!-- Page header card -->
+  <div class="card" style="margin-top:16px;">
+    <h2 class="h2">Project Overview</h2>
+    <p>
+      This project focused on the design and validation of a compact scatter detector system for measuring atmospheric CO₂
+      concentration in a high-altitude balloon (HAB) environment. The system integrates a photodiode-based sensing mechanism
+      with an analog front-end, filtering stages, and digital acquisition via a microcontroller.
+    </p>
+    <p>
+      The design process included schematic development, PCB layout, analog signal conditioning using a transimpedance amplifier
+      (TIA), and mechanical enclosure modeling for optical isolation. Emphasis was placed on signal integrity, noise reduction,
+      and reliable data acquisition under constrained environmental conditions.
+    </p>
   </div>
-
-</section>
-  
-<!-- Page header card -->
-<div class="card" style="margin-top:16px;">
-  <h2 class="h2">Project Overview</h2>
-  <p>
-    This project focused on the design and validation of a compact scatter detector system for measuring atmospheric CO₂ 
-    concentration in a high-altitude balloon (HAB) environment. The system integrates a photodiode-based sensing mechanism
-    with an analog front-end, filtering stages, and digital acquisition via a microcontroller.
-
-    The design process included schematic development, PCB layout, analog signal conditioning using a transimpedance amplifier
-    (TIA), and mechanical enclosure modeling for optical isolation. Emphasis was placed on signal integrity, noise reduction, 
-    and reliable data acquisition under constrained environmental conditions.
-  </p>
-</div>
 
   <!-- Optional quick stats row -->
   <div class="grid" style="margin-top:12px;">
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Tools:</strong> KiCad, SolidWorks, LTSpice, Arduino IDE  </p>
+      <p class="muted" style="margin:0;"><strong>Tools:</strong> KiCad, SolidWorks, LTSpice, Arduino IDE</p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Domain:</strong> Embedded Systems, PCB Design, Analog Signal Processing </p>
+      <p class="muted" style="margin:0;"><strong>Domain:</strong> Embedded Systems, PCB Design, Analog Signal Processing</p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Focus:</strong> Photodiode Sensing, TIA Design, Signal Filtering, Data Acquisition </p>
+      <p class="muted" style="margin:0;"><strong>Focus:</strong> Photodiode Sensing, TIA Design, Signal Filtering, Data Acquisition</p>
     </div>
   </div>
-</div>
 
-<section class="grid" style="margin-top:16px;">
+  <section class="grid" style="margin-top:16px;">
 
-  <!-- 1) TOPIC 1 -->
-  <article class="card col-12">
-    <h2 class="h2">System Architecture & Design</h2>
-    <p>
-    The system was designed as a modular sensing pipeline converting optical scatter into a measurable electrical signal. The architecture
-    integrates a photodiode sensing interface, analog signal conditioning, filtering, and ADC-based digitization for embedded processing.
-    </p>
-    
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <h3 class="h3">TOPIC</h3>
-       <figure>
-        <img 
-          src="../assets/HAB/PCB_DataSheet.png"
-          alt="System schematic"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-        <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 1. System schematic including photodiode interface, TIA (OPA320), low-pass filtering, and ADC integration.
-        </figcaption>
-      </figure>
-        <ul>
-          <li>Photodiode converts scattered light into current signal</li>
-          <li>OPA320-based TIA converts current to voltage</li>
-          <li>2-pole passive LPF reduces high-frequency noise</li>
-        </ul>
+    <article class="card col-12">
+      <h2 class="h2">System Architecture & Design</h2>
+      <p>
+        The system was designed as a modular sensing pipeline converting optical scatter into a measurable electrical signal.
+        The architecture integrates a photodiode sensing interface, analog signal conditioning, filtering, and ADC-based digitization for embedded processing.
+      </p>
+
+      <div class="grid" style="margin-top:12px;">
+        <div class="col-6">
+          <h3 class="h3">System Schematic</h3>
+          <figure>
+            <img
+              src="../assets/HAB/PCB_DataSheet.png"
+              alt="System schematic"
+              style="width:100%; height:auto; display:block; border-radius:14px;"
+            >
+            <figcaption class="muted" style="font-size:0.85rem;">
+              Figure 1. System schematic including photodiode interface, TIA (OPA320), low-pass filtering, and ADC integration.
+            </figcaption>
+          </figure>
+          <ul>
+            <li>Photodiode converts scattered light into current signal</li>
+            <li>OPA320-based TIA converts current to voltage</li>
+            <li>2-pole passive LPF reduces high-frequency noise</li>
+          </ul>
+        </div>
+
+        <div class="col-6">
+          <h3 class="h3">PCB Layout</h3>
+          <figure>
+            <img
+              src="../assets/HAB/PCB.png"
+              alt="PCB"
+              style="width:100%; height:auto; display:block; border-radius:14px;"
+            >
+            <figcaption class="muted" style="font-size:0.85rem;">
+              Figure 2. Final PCB layout showing component placement and routing for signal integrity.
+            </figcaption>
+          </figure>
+          <ul>
+            <li>Compact layout optimized for HAB payload constraints</li>
+            <li>Separated analog and digital regions</li>
+            <li>Short trace routing for sensitive analog paths</li>
+          </ul>
+        </div>
       </div>
+    </article>
 
-      <div class="col-6">
-        <h3 class="h3">TOPIC</h3>
-        <figure>
-        <img 
-          src="../assets/HAB/PCB.png"
-          alt="PCB"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 2. Final PCB layout showing component placement and routing for signal integrity.
-        </figcaption>
-      </figure>
-        <ul>
-          <li>Compact layout optimized for HAB payload constraints</li>
-          <li>Separated analog and digital regions</li>
-          <li>Short trace routing for sensitive analog paths</li>
-        </ul>
-      </div>
-    </div>
-  </article>
-
-  <!-- 2) TOPIC 2 -->
-  <article class="card col-12">
-    <h2 class="h2">PCB Design & Hardware Integration</h2>
-
-<div class="grid" style="margin-top:12px;">
-
- <!-- LEFT COLUMN -->
-<div class="col-7">
-  <p>
-    The PCB was designed to support low-noise analog measurements while interfacing with a MicroMod
-    processor via I²C. Special attention was given to grounding strategy, component placement, and minimizing
-    parasitic effects in the analog front-end.
-  </p>
-
-        <h3 class="h3">Design Considerations</h3>
-        <ul>
-          <li>Teensy processor for scalability</li>
-          <li>Decoupling capacitors placed near IC power pins</li>
-          <li>Ground plane used for noise reduction</li>
-        </ul>
-
-        <h3 class="h3">Hardware Integration</h3>
-        <ul>
-          <li>ADS1115 ADC used for high-resolution measurement</li>
-          <li>I²C communication with MicroMod processor</li>
-          <li>External connector for photodiode/LED interface</li>
-        </ul>
-</div>
-
-<!-- RIGHT COLUMN -->
-<div class="col-5">
-  <figure>
-    <img 
-      src="../assets/HAB/board.JPG"
-      alt="Physical PCB"
-      style="width:100%; height:auto; display:block; border-radius:14px;"
-    >
-    <figcaption class="uted" style="font-size:0.85rem;">
-      Figure 3. Assembled PCB mounted to MicroMod carrier board during validation testing.
-    </figcaption>
-  </figure>
-</div>
-  
-</div>
-</article>
-
-  <!-- 3) TOPIC 3 -->
-  <article class="card col-12">
-    <h2 class="h2">Analog Front-End & Signal Conditioning</h2>
-    <p>
-     The analog front-end was designed to accurately capture low-level photodiode signals. 
-      A transimpedance amplifier (TIA) converts current to voltage, followed by a passive low-pass
-      filter to suppress noise and stabilize the signal prior to digitization.
-    </p>
-    
-        <h3 class="h3">TIA Design</h3>
-        <ul>
-          <li>OPA320 selected for low noise and rail-to-rail performance</li>
-          <li>Feedback resistor sets gain for photodiode current range</li>
-          <li>Stability ensured with feedback capacitor</li>
-        </ul>
-
-        <h3 class="h3">Filtering</h3>
-        <ul>
-          <li>2-pole passive LPF reduces high-frequency noise</li>
-          <li>Improves ADC measurement stability</li>
-          <li>Prevents aliasing in digital sampling</li>
-        </ul>
-    
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <figure>
-        <img 
-          src="../assets/HAB/board_validation.jpg"
-          alt="TITLE OF PICTURE"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 4. Close-up of analog front-end components including TIA and filtering stage.
-        </figcaption>
-      </figure>
-
-      </div>
-      <div class="col-6">
-        <h3 class="h3">Mechanical Design & Optical Isolation</h3>
-        <ul>
-          <li>Ensure controlled optical path for scatter detection</li>
-          <li>Minimize external light interference</li>
-          <li>Support stable sensor alignment</li>
-        </ul>
-        <figure>
-        <img 
-          src="../assets/HAB/Detector_3D.JPG"
-          alt="Detector"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 5. SolidWorks model of the scatter detector housing showing optical channel geometry.
-        </figcaption>
-      </figure>
-      </div>
-    </div>
-  </article>
-</main>
-
+  </section>
 </main>
 
 <footer class="container">
