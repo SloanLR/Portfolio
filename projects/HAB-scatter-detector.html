@@ -46,13 +46,10 @@
   <!-- Hero Section -->
 <section class="card" style="padding:0; overflow:hidden;">
 
-  <div style="position:relative;">
-
     <!-- Hero Image -->
     <img
-      src="../PICTURE PATH HERE"
-      alt="TITLE OF PICTURE"
-      style="width:100%; height:auto; display:block;"
+      src="../assets/HAB/scatter_setup.jpg"
+      alt="HAB Scatter Detector PCB and Test Setup"
     >
 
     <!-- Optional overlay -->
@@ -65,10 +62,11 @@
       background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
     ">
       <h1 class="h1" style="margin:0; color:white;">
-        [PROJECT TITLE]
+        HAB Scatter Detector Payload
       </h1>
       <p class="muted" style="margin-top:8px; color:rgba(255,255,255,.85);">
-        [BRIEF DESCRIPTION HERE]
+        Custom PCB-based photodiode scatter detector designed for CO₂ sensing in a high-altitude balloon (HAB) system, 
+        integrating analog signal conditioning, embedded processing, and mechanical enclosure design.
       </p>
     </div>
 
@@ -80,20 +78,26 @@
 <div class="card" style="margin-top:16px;">
   <h2 class="h2">Project Overview</h2>
   <p>
-   [INSERT TEXT HERE]
+    This project focused on the design and validation of a compact scatter detector system for measuring atmospheric CO₂ 
+    concentration in a high-altitude balloon (HAB) environment. The system integrates a photodiode-based sensing mechanism
+    with an analog front-end, filtering stages, and digital acquisition via a microcontroller.
+
+    The design process included schematic development, PCB layout, analog signal conditioning using a transimpedance amplifier
+    (TIA), and mechanical enclosure modeling for optical isolation. Emphasis was placed on signal integrity, noise reduction, 
+    and reliable data acquisition under constrained environmental conditions.
   </p>
 </div>
 
   <!-- Optional quick stats row -->
   <div class="grid" style="margin-top:12px;">
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Tools:</strong> [SOFTWARE USED]</p>
+      <p class="muted" style="margin:0;"><strong>Tools:</strong> KiCad, SolidWorks, LTSpice, Arduino IDE  </p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Domain:</strong> [FEW DESCRIPTORS]</p>
+      <p class="muted" style="margin:0;"><strong>Domain:</strong> Embedded Systems, PCB Design, Analog Signal Processing </p>
     </div>
     <div class="col-4">
-      <p class="muted" style="margin:0;"><strong>Focus:</strong> [FEW DESCRIPTORS]</p>
+      <p class="muted" style="margin:0;"><strong>Focus:</strong> Photodiode Sensing, TIA Design, Signal Filtering, Data Acquisition </p>
     </div>
   </div>
 </div>
@@ -102,9 +106,10 @@
 
   <!-- 1) TOPIC 1 -->
   <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 1</h2>
+    <h2 class="h2">System Architecture & Design</h2>
     <p>
-    [INSERT TEXT HERE]
+    The system was designed as a modular sensing pipeline converting optical scatter into a measurable electrical signal. The architecture
+    integrates a photodiode sensing interface, analog signal conditioning, filtering, and ADC-based digitization for embedded processing.
     </p>
     
     <div class="grid" style="margin-top:12px;">
@@ -112,19 +117,19 @@
         <h3 class="h3">TOPIC</h3>
        <figure>
         <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
+          src="../assets/HAB/PCB_DataSheet.png"
+          alt="System schematic"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 1. [INSERT CAPTION HERE]
+          Figure 1. System schematic including photodiode interface, TIA (OPA320), low-pass filtering, and ADC integration.
         </figcaption>
       </figure>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Photodiode converts scattered light into current signal</li>
+          <li>OPA320-based TIA converts current to voltage</li>
+          <li>2-pole passive LPF reduces high-frequency noise</li>
         </ul>
       </div>
 
@@ -132,19 +137,19 @@
         <h3 class="h3">TOPIC</h3>
         <figure>
         <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
+          src="../assets/HAB/PCB.png"
+          alt="PCB"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
          <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 2. [INSERT CAPTION HERE]
+          Figure 2. Final PCB layout showing component placement and routing for signal integrity.
         </figcaption>
       </figure>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Compact layout optimized for HAB payload constraints</li>
+          <li>Separated analog and digital regions</li>
+          <li>Short trace routing for sensitive analog paths</li>
         </ul>
       </div>
     </div>
@@ -152,28 +157,30 @@
 
   <!-- 2) TOPIC 2 -->
   <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 2</h2>
+    <h2 class="h2">PCB Design & Hardware Integration</h2>
 
 <div class="grid" style="margin-top:12px;">
 
  <!-- LEFT COLUMN -->
 <div class="col-7">
   <p>
-    [INSERT TEXT HERE]
+    The PCB was designed to support low-noise analog measurements while interfacing with a MicroMod
+    processor via I²C. Special attention was given to grounding strategy, component placement, and minimizing
+    parasitic effects in the analog front-end.
   </p>
 
-        <h3 class="h3">[TOPIC]</h3>
+        <h3 class="h3">Design Considerations</h3>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>Teensy processor for scalability</li>
+          <li>Decoupling capacitors placed near IC power pins</li>
+          <li>Ground plane used for noise reduction</li>
         </ul>
 
-        <h3 class="h3">[TOPIC]</h3>
+        <h3 class="h3">Hardware Integration</h3>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>ADS1115 ADC used for high-resolution measurement</li>
+          <li>I²C communication with MicroMod processor</li>
+          <li>External connector for photodiode/LED interface</li>
         </ul>
 </div>
 
@@ -181,12 +188,12 @@
 <div class="col-5">
   <figure>
     <img 
-      src="../PICTURE PATH HERE"
-      alt="TITLE OF PICTURE"
+      src="../assets/HAB/board.JPG"
+      alt="Physical PCB"
       style="width:100%; height:auto; display:block; border-radius:14px;"
     >
     <figcaption class="uted" style="font-size:0.85rem;">
-      Figure 3. [INSERT CAPTION HERE]
+      Figure 3. Assembled PCB mounted to MicroMod carrier board during validation testing.
     </figcaption>
   </figure>
 </div>
@@ -196,203 +203,63 @@
 
   <!-- 3) TOPIC 3 -->
   <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 3</h2>
+    <h2 class="h2">Analog Front-End & Signal Conditioning</h2>
     <p>
-     [INSERT TEXT HERE]
+     The analog front-end was designed to accurately capture low-level photodiode signals. 
+      A transimpedance amplifier (TIA) converts current to voltage, followed by a passive low-pass
+      filter to suppress noise and stabilize the signal prior to digitization.
     </p>
     
-        <h3 class="h3">[TOPIC]</h3>
+        <h3 class="h3">TIA Design</h3>
         <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
+          <li>OPA320 selected for low noise and rail-to-rail performance</li>
+          <li>Feedback resistor sets gain for photodiode current range</li>
+          <li>Stability ensured with feedback capacitor</li>
         </ul>
+
+        <h3 class="h3">Filtering</h3>
+        <ul>
+          <li>2-pole passive LPF reduces high-frequency noise</li>
+          <li>Improves ADC measurement stability</li>
+          <li>Prevents aliasing in digital sampling</li>
+        </ul>
+    
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
-        <h3 class="h3">PICTURE TITLE</h3>
         <figure>
         <img 
-          src="../PICTURE PATH HERE"
+          src="../assets/HAB/board_validation.jpg"
           alt="TITLE OF PICTURE"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
          <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 4. [INSERT CAPTION HERE]
+          Figure 4. Close-up of analog front-end components including TIA and filtering stage.
         </figcaption>
       </figure>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
+
       </div>
       <div class="col-6">
-        <h3 class="h3">TOPIC</h3>
+        <h3 class="h3">Mechanical Design & Optical Isolation</h3>
+        <ul>
+          <li>Ensure controlled optical path for scatter detection</li>
+          <li>Minimize external light interference</li>
+          <li>Support stable sensor alignment</li>
+        </ul>
         <figure>
         <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
+          src="../assets/HAB/Detector_3D.JPG"
+          alt="Detector"
           style="width:100%; height:auto; display:block; border-radius:14px;"
         >
       
          <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 5. [INSERT CAPTION HERE]
-        </figcaption>
-      </figure>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-      </div>
-    </div>
-  </article>
-
-  <!-- 4) TOPIC -->
-  <article class="card col-12">
-    <h2 class="h2">TITLE OF TOPIC 4</h2>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <h3 class="h3">[TOPIC]</h3>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-
-        <h3 class="h3">TOPIC</h3>
-        <figure>
-        <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 6. [INSERT CAPTION HERE]
-        </figcaption>
-      </figure>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-        <figure>
-        <img 
-          src="../PICTURE PATH HERE"
-          alt="TITLE OF PICTURE"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 7. [INSERT CAPTION HERE]
+          Figure 5. SolidWorks model of the scatter detector housing showing optical channel geometry.
         </figcaption>
       </figure>
       </div>
     </div>
   </article>
-
-  <!-- 5) TOPIC -->
-  <article class="card col-12">
-    <h2 class="h2">[TITLE OF TOPIC 5]</h2>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <p>
-          [insert text]
-        </p>
-
-        <h3 class="h3">[TOPIC]</h3>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-
-        <h3 class="h3">[TOPIC]</h3>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-      </div>
-    </div>
-  </article>
-
-  <!-- 6) TOPIC -->
-  <article class="card col-12">
-    <h2 class="h2">[TITLE OF TOPIC 6]</h2>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-7">
-        <h3 class="h3">[TOPIC]</h3>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-
-        <h3 class="h3">[TOPIC]</h3>
-        <ul>
-          <li>[1]</li>
-          <li>[2]</li>
-          <li>[3]</li>
-        </ul>
-      </div>
-
-      <div class="col-5">
-        <img
-          src="../PICTURE PATH HERE"
-          alt="NAME OF PICTURE"
-          style="width:100%; height:auto; display:block; border-radius:14px; border:1px solid rgba(255,255,255,.12);"
-        >
-      </div>
-    </div>
-  </article>
-
-  <!-- 7) Results -->
-  <article class="card col-12">
-    <h2 class="h2">Results</h2>
-
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <h3 class="h3">Performance Summary</h3>
-        <ul>
-          <li><strong>[point 1]:</strong> [insert value + conditions]</li>
-          <li><strong>[point 2]:</strong> [insert pattern or description]</li>
-          <li><strong>[point 3]:</strong> [insert text here]</li>
-        </ul>
-      </div>
-      <div class="col-6">
-        <h3 class="h3">[INSERT TEXT HERE]</h3>
-        <ul>
-          <li>[topic 1]</li>
-          <li>[topic 2]</li>
-          <li>[topic 3]</li>
-        </ul>
-      </div>
-    </div>
-  </article>
-
-</section>
-  
-<article class="card col-12">
-  <h2 class="h2">Full Technical Report</h2>
-  <p>
-    The complete project documentation, [INSERT TEXT HERE] is available below.
-  </p>
-<div style="margin-top:12px;">
-  <a href="../PDF PATH HERE" target="_blank" class="btn">
-    View Report
-  </a>
-
-  <a href="../PDF PATH HERE" download class="btn" style="margin-left:8px;">
-    Download PDF
-  </a>
-</div>
-</article>
 </main>
 
 </main>
