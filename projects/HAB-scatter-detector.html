@@ -43,6 +43,14 @@
 
 <main class="container">
 
+  <!-- Hero Section -->
+  <section class="card" style="padding:0; overflow:hidden; position:relative;">
+    <img
+      src="../assets/HAB/scatter_setup.jpg"
+      alt="HAB Scatter Detector PCB and Test Setup"
+      style="width:100%; height:auto; display:block;"
+    >
+
     <div style="
       position:absolute;
       bottom:0;
@@ -76,7 +84,7 @@
     </p>
   </div>
 
-  <!-- Optional quick stats row -->
+  <!-- Quick stats row -->
   <div class="grid" style="margin-top:12px;">
     <div class="col-4">
       <p class="muted" style="margin:0;"><strong>Tools:</strong> KiCad, SolidWorks, LTSpice, Arduino IDE</p>
@@ -91,6 +99,7 @@
 
   <section class="grid" style="margin-top:16px;">
 
+    <!-- 1) System Architecture -->
     <article class="card col-12">
       <h2 class="h2">System Architecture & Design</h2>
       <p>
@@ -123,7 +132,7 @@
           <figure>
             <img
               src="../assets/HAB/PCB.png"
-              alt="PCB"
+              alt="PCB layout"
               style="width:100%; height:auto; display:block; border-radius:14px;"
             >
             <figcaption class="muted" style="font-size:0.85rem;">
@@ -136,109 +145,107 @@
             <li>Short trace routing for sensitive analog paths</li>
           </ul>
         </div>
-  <!-- 2) TOPIC 2 -->
-  <article class="card col-12">
-    <h2 class="h2">PCB Design & Hardware Integration</h2>
-
-<div class="grid" style="margin-top:12px;">
-
- <!-- LEFT COLUMN -->
-<div class="col-7">
-  <p>
-    The PCB was designed to support low-noise analog measurements while interfacing with a MicroMod
-    processor via I²C. Special attention was given to grounding strategy, component placement, and minimizing
-    parasitic effects in the analog front-end.
-  </p>
-
-        <h3 class="h3">Design Considerations</h3>
-        <ul>
-          <li>Teensy processor for scalability</li>
-          <li>Decoupling capacitors placed near IC power pins</li>
-          <li>Ground plane used for noise reduction</li>
-        </ul>
-
-        <h3 class="h3">Hardware Integration</h3>
-        <ul>
-          <li>ADS1115 ADC used for high-resolution measurement</li>
-          <li>I²C communication with MicroMod processor</li>
-          <li>External connector for photodiode/LED interface</li>
-        </ul>
-</div>
-
-<!-- RIGHT COLUMN -->
-<div class="col-5">
-  <figure>
-    <img 
-      src="../assets/HAB/board.JPG"
-      alt="Physical PCB"
-      style="width:100%; height:auto; display:block; border-radius:14px;"
-    >
-    <figcaption class="uted" style="font-size:0.85rem;">
-      Figure 3. Assembled PCB mounted to MicroMod carrier board during validation testing.
-    </figcaption>
-  </figure>
-</div>
-  
-</div>
-</article>
-
-  <!-- 3) TOPIC 3 -->
-  <article class="card col-12">
-    <h2 class="h2">Analog Front-End & Signal Conditioning</h2>
-    <p>
-     The analog front-end was designed to accurately capture low-level photodiode signals. 
-      A transimpedance amplifier (TIA) converts current to voltage, followed by a passive low-pass
-      filter to suppress noise and stabilize the signal prior to digitization.
-    </p>
-    
-        <h3 class="h3">TIA Design</h3>
-        <ul>
-          <li>OPA320 selected for low noise and rail-to-rail performance</li>
-          <li>Feedback resistor sets gain for photodiode current range</li>
-          <li>Stability ensured with feedback capacitor</li>
-        </ul>
-
-        <h3 class="h3">Filtering</h3>
-        <ul>
-          <li>2-pole passive LPF reduces high-frequency noise</li>
-          <li>Improves ADC measurement stability</li>
-          <li>Prevents aliasing in digital sampling</li>
-        </ul>
-    
-    <div class="grid" style="margin-top:12px;">
-      <div class="col-6">
-        <figure>
-        <img 
-          src="../assets/HAB/board_validation.jpg"
-          alt="TITLE OF PICTURE"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 4. Close-up of analog front-end components including TIA and filtering stage.
-        </figcaption>
-      </figure>
-
       </div>
-      <div class="col-6">
-        <h3 class="h3">Mechanical Design & Optical Isolation</h3>
-        <ul>
-          <li>Ensure controlled optical path for scatter detection</li>
-          <li>Minimize external light interference</li>
-          <li>Support stable sensor alignment</li>
-        </ul>
-        <figure>
-        <img 
-          src="../assets/HAB/Detector_3D.JPG"
-          alt="Detector"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-      
-         <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 5. SolidWorks model of the scatter detector housing showing optical channel geometry.
-        </figcaption>
-      </figure>
+    </article>
 
+    <!-- 2) PCB Design -->
+    <article class="card col-12">
+      <h2 class="h2">PCB Design & Hardware Integration</h2>
+
+      <div class="grid" style="margin-top:12px;">
+        <div class="col-7">
+          <p>
+            The PCB was designed to support low-noise analog measurements while interfacing with a MicroMod
+            processor via I²C. Special attention was given to grounding strategy, component placement, and minimizing
+            parasitic effects in the analog front-end.
+          </p>
+
+          <h3 class="h3">Design Considerations</h3>
+          <ul>
+            <li>Processor interface designed for embedded data collection</li>
+            <li>Decoupling capacitors placed near IC power pins</li>
+            <li>Ground plane used for noise reduction</li>
+          </ul>
+
+          <h3 class="h3">Hardware Integration</h3>
+          <ul>
+            <li>ADS1115 ADC used for high-resolution measurement</li>
+            <li>I²C communication with MicroMod processor</li>
+            <li>External connector for photodiode/LED interface</li>
+          </ul>
+        </div>
+
+        <div class="col-5">
+          <figure>
+            <img
+              src="../assets/HAB/board.JPG"
+              alt="Physical PCB"
+              style="width:100%; height:auto; display:block; border-radius:14px;"
+            >
+            <figcaption class="muted" style="font-size:0.85rem;">
+              Figure 3. Assembled PCB mounted to MicroMod carrier board during validation testing.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3) Analog Front-End -->
+    <article class="card col-12">
+      <h2 class="h2">Analog Front-End & Signal Conditioning</h2>
+      <p>
+        The analog front-end was designed to accurately capture low-level photodiode signals.
+        A transimpedance amplifier (TIA) converts current to voltage, followed by a passive low-pass
+        filter to suppress noise and stabilize the signal prior to digitization.
+      </p>
+
+      <h3 class="h3">TIA Design</h3>
+      <ul>
+        <li>OPA320 selected for low noise and rail-to-rail performance</li>
+        <li>Feedback resistor sets gain for photodiode current range</li>
+        <li>Stability ensured with feedback capacitor</li>
+      </ul>
+
+      <h3 class="h3">Filtering</h3>
+      <ul>
+        <li>2-pole passive LPF reduces high-frequency noise</li>
+        <li>Improves ADC measurement stability</li>
+        <li>Prevents aliasing in digital sampling</li>
+      </ul>
+
+      <div class="grid" style="margin-top:12px;">
+        <div class="col-6">
+          <figure>
+            <img
+              src="../assets/HAB/board_validation.jpg"
+              alt="Analog front-end PCB close-up"
+              style="width:100%; height:auto; display:block; border-radius:14px;"
+            >
+            <figcaption class="muted" style="font-size:0.85rem;">
+              Figure 4. Close-up of analog front-end components including TIA and filtering stage.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col-6">
+          <h3 class="h3">Mechanical Design & Optical Isolation</h3>
+          <ul>
+            <li>Ensure controlled optical path for scatter detection</li>
+            <li>Minimize external light interference</li>
+            <li>Support stable sensor alignment</li>
+          </ul>
+
+          <figure>
+            <img
+              src="../assets/HAB/Detector_3D.JPG"
+              alt="Scatter detector 3D model"
+              style="width:100%; height:auto; display:block; border-radius:14px;"
+            >
+            <figcaption class="muted" style="font-size:0.85rem;">
+              Figure 5. SolidWorks model of the scatter detector housing showing optical channel geometry.
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </article>
 
