@@ -227,28 +227,26 @@
           during Engineering Design Day Semester 1.
         </figcaption>
       </figure>
+      
         <ul>
           <li>
-            Conducted in-depth <strong>sensor research and evaluation</strong>, analyzing
-            datasheets and manufacturer specifications to identify suitable sensing
-            technologies for millimeter-scale displacement detection.
+            <strong>Project Manager:</strong> Coordinated civil teams, sponsors, and advisor
+            to align system design with project requirements.
           </li>
         
           <li>
-            Validated sensor integration by reviewing embedded code and hardware behavior,
-            identifying inconsistencies between expected and observed performance during testing.
+            <strong>Sensor Research:</strong> Evaluated and selected sensing technologies
+            using datasheets and experimental validation.
           </li>
         
           <li>
-            Led the <strong>data analysis pipeline</strong> using Jupyter notebooks,
-            applying filtering techniques (noise reduction, smoothing) to clean sensor data
-            and evaluate signal quality.
+            <strong>System Validation:</strong> Identified discrepancies between expected
+            and measured performance in embedded testing.
           </li>
         
           <li>
-            Implemented and compared <strong>machine learning models</strong> to determine
-            whether algorithmic approaches could improve measurement accuracy and precision
-            across different sensing modalities.
+            <strong>Data & ML:</strong> Built a Jupyter-based pipeline applying filtering
+            and machine learning to improve measurement accuracy.
           </li>
         </ul>
 
@@ -267,12 +265,9 @@
     <!-- LEFT COLUMN -->
     <div class="col-7">
       <p>
-        We designed the system as a modular, end-to-end monitoring pipeline:
-        distributed sensor nodes collect motion/environment data, transmit
-        telemetry wirelessly, and a Raspberry Pi gateway aggregates streams
-        for logging, visualization, and alerting. This architecture let us
-        swap sensing modalities (IMU, ToF, radar, moisture/pressure) while
-        keeping the same acquisition and analytics framework.
+        We designed a modular, end-to-end sensing system where distributed nodes collect
+        data and transmit telemetry to a centralized Raspberry Pi gateway for logging
+        and real-time monitoring.
       </p>
 <div style="margin-top:20px; text-align:center;">
 
@@ -332,28 +327,13 @@ wireless telemetry, central gateway aggregation, and monitoring interface.
 </p>
 
 </div>
-      <h3 class="h3">End-to-End Flow</h3>
-      <ol style="margin-top:8px;">
-        <li><strong>Sense:</strong> Node reads sensors and timestamps measurements.</li>
-        <li><strong>Transmit:</strong> Node publishes telemetry over Wi-Fi.</li>
-        <li><strong>Aggregate:</strong> Raspberry Pi gateway subscribes, validates, and logs data.</li>
-        <li><strong>Visualize:</strong> Dashboard displays live status + trends; alerts trigger on thresholds.</li>
-      </ol>
-
-      <h3 class="h3">Hardware + Network Topology</h3>
+           <h3 class="h3">System Overview</h3>
       <ul>
-        <li><strong>Sensor nodes:</strong> MCU-based modules (e.g., ESP32-class) connected to one or more sensors (IMU / ToF / radar / environmental).</li>
-        <li><strong>Central gateway:</strong> Raspberry Pi running the broker, logger, and UI (single source of truth for system health and data capture).</li>
-        <li><strong>Modular design:</strong> Add/remove nodes without changing the core pipeline (enables rapid trade studies across sensors).</li>
+        <li><strong>Sensor Nodes:</strong> ESP32-based modules interfacing with IMU, ToF, radar, and environmental sensors.</li>
+        <li><strong>Communication:</strong> Wireless telemetry using structured messaging (JSON over Wi-Fi).</li>
+        <li><strong>Gateway:</strong> Raspberry Pi handling data aggregation, validation, and storage.</li>
+        <li><strong>Interface:</strong> Real-time dashboard for monitoring system behavior and trends.</li>
       </ul>
-
-      <h3 class="h3">Messaging + Monitoring</h3>
-      <ul>
-        <li><strong>Discovery:</strong> Lightweight node discovery + handshake to simplify setup and field deployment.</li>
-        <li><strong>Telemetry format:</strong> Structured messages (e.g., JSON) with consistent fields for parsing and analysis.</li>
-        <li><strong>Topics by sensor:</strong> Clear topic naming (per node / per sensor) to keep multi-sensor streams organized.</li>
-      </ul>
-
       <!-- Optional: small callout  -->
       <div class="card" style="margin-top:12px; padding:12px; border:1px solid rgba(255,255,255,.12);">
         <h3 class="h3" style="margin-top:0;">System Performance (Representative)</h3>
@@ -372,47 +352,30 @@ wireless telemetry, central gateway aggregation, and monitoring interface.
   <h2 class="h2">Hardware Development & Sensor Integration</h2>
 
   <p>
-    A major component of the project involved developing and testing embedded
-    hardware capable of supporting multiple sensing modalities. The system was
-    designed around modular sensor nodes so that different sensing approaches
-    could be evaluated under the same data acquisition and networking pipeline.
+    Will developed modular embedded hardware to enable rapid evaluation of multiple
+    sensing modalities within a unified system architecture.
   </p>
-
-  <h3 class="h3">Hardware Design Goals</h3>
+  
   <ul>
-    <li>Support multiple sensing modalities (IMU, ToF, radar, environmental sensors).</li>
-    <li>Maintain modular architecture so sensors could be swapped during testing.</li>
-    <li>Enable continuous monitoring with reliable wireless data transmission.</li>
+    <li><strong>Custom PCB:</strong> Integrated IMU sensors with embedded processing for displacement testing.</li>
+    <li><strong>Modular Design:</strong> Enabled quick sensor swapping for comparative analysis.</li>
+    <li><strong>Validation:</strong> Assessed sensor performance under controlled conditions to characterize noise, drift, and repeatability.</li>
   </ul>
 
-  <div class="grid" style="margin-top:12px;">
+  <figure>
+    <img 
+      src="../assets/AASB/PCB_IMU.JPG"
+      alt="Custom PCB used for IMU-based sensor node"
+      style="width:100%; height:auto; display:block; border-radius:14px;"
+    >
 
-    <!-- LEFT COLUMN -->
-    <div class="col-6">
+    <figcaption class="muted" style="font-size:0.85rem;">
+      Figure 3. Prototype PCB integrating inertial sensors with embedded
+      processing for displacement monitoring.
+    </figcaption>
+  </figure>
 
-      <h3 class="h3">Custom Sensor Node Hardware</h3>
-
-      <figure>
-        <img 
-          src="../assets/AASB/PCB_IMU.JPG"
-          alt="Custom PCB used for IMU-based sensor node"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-
-        <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 3. Prototype PCB integrating inertial sensors with an embedded
-          microcontroller for displacement monitoring experiments.
-        </figcaption>
-      </figure>
-
-      <ul>
-        <li>Developed custom sensor node hardware integrating IMU sensors and embedded processing.</li>
-        <li>Evaluated orientation-based displacement detection using inertial measurements.</li>
-        <li>Designed the hardware to support iterative testing and rapid sensor replacement.</li>
-      </ul>
-
-    </div>
-  </div>
+</article>
   
     <!-- RIGHT COLUMN -->
     <div class="col-6">
@@ -472,25 +435,15 @@ wireless telemetry, central gateway aggregation, and monitoring interface.
   <div class="grid" style="margin-top:12px;">
     <div class="col-7">
 
-  <p>
-  Once data reached the gateway, the system supported logging, visualization, and
-  analysis for both live testing and longer-duration experiments. This let the team
-  observe sensor behavior in real time while also preserving data for later evaluation
-  of drift, repeatability, and anomalies.
-  </p>
-
-      <h3 class="h3">Data Acquisition Pipeline</h3>
+      <p>
+        I developed a data processing pipeline to analyze sensor performance in both
+        real-time and post-test environments.
+      </p>
+      
       <ul>
-        <li>Sensor nodes collected measurements and packaged readings into structured telemetry messages.</li>
-        <li>Wireless communication transmitted sensor data to a central gateway for aggregation.</li>
-        <li>Data streams were logged to enable long-duration monitoring and post-processing analysis.</li>
-      </ul>
-
-      <h3 class="h3">Real-Time Monitoring Interface</h3>
-      <ul>
-        <li>A centralized dashboard displayed live sensor values and system status.</li>
-        <li>The monitoring interface allowed rapid validation of sensor behavior during experiments.</li>
-        <li>Real-time visualization helped identify drift, noise patterns, and system anomalies.</li>
+        <li><strong>Processing:</strong> Filtering and analysis to evaluate signal quality</li>
+        <li><strong>Monitoring:</strong> Dashboard for real-time validation and anomaly detection</li>
+        <li><strong>Logging:</strong> Stored datasets for drift, repeatability, and comparative analysis</li>
       </ul>
 
     </div>
@@ -507,48 +460,19 @@ wireless telemetry, central gateway aggregation, and monitoring interface.
     <div class="col-6">
 
       <h3 class="h3">Performance Summary</h3>
+      <h3 class="h3">Key Results</h3>
       <ul>
-        <li>
-          <strong>Distance sensing precision:</strong> Time-of-Flight testing achieved
-          approximately <strong>0.6 mm standard deviation</strong> during controlled experiments.
-        </li>
-
-        <li>
-          <strong>Communication latency:</strong> End-to-end telemetry latency averaged
-          <strong>~33 ms</strong> with reliable packet delivery during system testing.
-        </li>
-
-        <li>
-          <strong>System integration:</strong> The prototype successfully demonstrated
-          continuous monitoring using distributed sensor nodes, wireless data
-          transmission, and centralized visualization.
-        </li>
+        <li><strong>Precision:</strong> ToF sensors achieved ~0.6 mm standard deviation</li>
+        <li><strong>Latency:</strong> ~33 ms end-to-end telemetry delay</li>
+        <li><strong>System:</strong> Successfully demonstrated continuous multi-sensor monitoring</li>
       </ul>
-
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="col-6">
-
-      <h3 class="h3">Sensor Evaluation Outcome</h3>
+      
+      <h3 class="h3">Sensor Performance</h3>
       <ul>
-        <li>
-          <strong>Radar sensing:</strong> highest composite performance score
-          (~87%) for detecting structural movement.
-        </li>
-
-        <li>
-          <strong>Time-of-Flight sensors:</strong> strong displacement precision
-          (~86% composite score) with straightforward integration.
-        </li>
-
-        <li>
-          <strong>IMU-based sensing:</strong> provided useful orientation data but
-          was more sensitive to drift over long durations.
-        </li>
+        <li><strong>Radar:</strong> Highest overall performance (~87%)</li>
+        <li><strong>ToF:</strong> High precision with strong reliability (~86%)</li>
+        <li><strong>IMU:</strong> Useful orientation data but limited by drift</li>
       </ul>
-
-    </div>
 
   </div>
 
