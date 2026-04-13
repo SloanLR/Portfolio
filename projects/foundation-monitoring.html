@@ -90,21 +90,19 @@
 
   <h2 class="h2">Project Overview</h2>
 
-  <p>
-    The Foundation Monitoring System was a senior design research project focused on developing
-    a prototype platform capable of detecting small structural shifts in residential foundations.
-    The system combines multiple sensing modalities — including inertial measurement units (IMUs),
-    time-of-flight distance sensors, radar, and environmental sensors — with embedded hardware,
-    wireless communication, and real-time visualization tools.
-  </p>
+<p>
+  The Foundation Monitoring System was a senior design research project focused on
+  detecting small structural shifts in residential foundations. The team evaluated
+  multiple sensing approaches — including IMUs, Time-of-Flight sensors, radar, and
+  environmental sensing — to determine which methods were most effective for
+  millimeter-scale displacement monitoring.
+</p>
 
-  <p>
-    Our objective was to explore which sensing approaches could reliably detect
-    millimeter-scale motion over long durations while remaining cost-effective
-    for residential monitoring. The project resulted in a modular sensor node
-    architecture, wireless data pipeline, and prototype user interface capable
-    of monitoring structural behavior continuously.
-  </p>
+<p>
+  The project combined sensor testing, data analysis, embedded prototyping, and system-level
+  integration to develop a proof-of-concept monitoring platform for long-term
+  residential use.
+</p>
 
 </div>
 
@@ -163,22 +161,18 @@
 
   <h2 class="h2">Project Context</h2>
 
-  <p>
-    The Foundation Monitoring System was developed as part of a senior engineering
-    design project focused on detecting early signs of residential foundation
-    movement. The project explored multiple sensing approaches capable of detecting
-    millimeter-scale displacement while remaining practical for long-term
-    monitoring in real homes.
-  </p>
+<p>
+  This project was developed as part of a senior engineering design effort centered
+  on early detection of residential foundation movement. Our work focused on comparing
+  sensing technologies under realistic monitoring conditions and identifying practical
+  tradeoffs between precision, stability, and deployability.
+</p>
 
-  <p>
-    Our team designed and tested a modular sensing platform that integrates
-    embedded sensor nodes, wireless communication, and a centralized monitoring
-    interface. The system evaluates several sensing modalities — including
-    inertial sensors, distance sensors, and environmental measurements — in
-    order to determine which techniques are most reliable for long-term
-    structural monitoring.
-  </p>
+<p>
+  In addition to technical development, the project required coordination across
+  hardware, embedded systems, testing, and data analysis to produce a complete
+  prototype for Design Day demonstration.
+</p>
 
   <div class="grid" style="margin-top:12px;">
 
@@ -233,24 +227,30 @@
           during Engineering Design Day Semester 1.
         </figcaption>
       </figure>
-
-      <ul>
-        <li>
-          Served as <strong>Project Manager</strong>, coordinating project planning,
-          subsystem integration, and technical documentation.
-        </li>
-
-        <li>
-          Contributed to hardware prototyping and sensor evaluation,
-          including IMU-based displacement measurements and embedded data
-          acquisition.
-        </li>
-
-        <li>
-          Helped design the system architecture linking embedded sensor
-          nodes, wireless communication, and centralized monitoring tools.
-        </li>
-      </ul>
+        <ul>
+          <li>
+            Conducted in-depth <strong>sensor research and evaluation</strong>, analyzing
+            datasheets and manufacturer specifications to identify suitable sensing
+            technologies for millimeter-scale displacement detection.
+          </li>
+        
+          <li>
+            Validated sensor integration by reviewing embedded code and hardware behavior,
+            identifying inconsistencies between expected and observed performance during testing.
+          </li>
+        
+          <li>
+            Led the <strong>data analysis pipeline</strong> using Jupyter notebooks,
+            applying filtering techniques (noise reduction, smoothing) to clean sensor data
+            and evaluate signal quality.
+          </li>
+        
+          <li>
+            Implemented and compared <strong>machine learning models</strong> to determine
+            whether algorithmic approaches could improve measurement accuracy and precision
+            across different sensing modalities.
+          </li>
+        </ul>
 
     </div>
 
@@ -267,7 +267,7 @@
     <!-- LEFT COLUMN -->
     <div class="col-7">
       <p>
-        I designed the system as a modular, end-to-end monitoring pipeline:
+        We designed the system as a modular, end-to-end monitoring pipeline:
         distributed sensor nodes collect motion/environment data, transmit
         telemetry wirelessly, and a Raspberry Pi gateway aggregates streams
         for logging, visualization, and alerting. This architecture let us
@@ -472,13 +472,12 @@ wireless telemetry, central gateway aggregation, and monitoring interface.
   <div class="grid" style="margin-top:12px;">
     <div class="col-7">
 
-      <p>
-        To support continuous monitoring, the project included a complete data
-        processing pipeline that streamed sensor measurements from distributed
-        nodes to a central gateway for aggregation and visualization. This
-        architecture enabled real-time monitoring of structural behavior while
-        also storing historical data for analysis and testing.
-      </p>
+  <p>
+  Once data reached the gateway, the system supported logging, visualization, and
+  analysis for both live testing and longer-duration experiments. This let the team
+  observe sensor behavior in real time while also preserving data for later evaluation
+  of drift, repeatability, and anomalies.
+  </p>
 
       <h3 class="h3">Data Acquisition Pipeline</h3>
       <ul>
