@@ -79,11 +79,17 @@
 <!-- Page header card -->
 <div class="card" style="margin-top:16px;">
   <h2 class="h2">Project Overview</h2>
-  <p>
-    Designed and implemented an 8-bit ripple-carry adder at the CMOS transistor level,
-    including physical layout, routing optimization, and post-layout timing analysis.
-    The project emphasized modular architecture, layout symmetry, and propagation delay evaluation.
-  </p>
+    <p>
+      Designed and implemented an 8-bit ripple-carry adder at the CMOS transistor level,
+      including layout, routing optimization, and post-layout timing analysis.
+    </p>
+    
+    <ul>
+      <li><strong>Design:</strong> Modular 1-bit full adder → scalable 8-bit architecture</li>
+      <li><strong>Implementation:</strong> Transistor-level CMOS layout in Microwind</li>
+      <li><strong>Focus:</strong> Symmetry, routing efficiency, and delay optimization</li>
+      <li><strong>Analysis:</strong> Post-layout timing with parasitic effects</li>
+    </ul>
 </div>
 
   <!-- Optional quick stats row -->
@@ -105,14 +111,11 @@
   <!-- 1) Your Role / Contributions -->
   <article class="card col-12">
     <h2 class="h2">My Role and Contributions</h2>
-    <p>
-    I proposed the layout architecture and led the physical implementation of the design in Microwind,
-    translating the LTSpice schematic into a transistor-level CMOS layout and iteratively optimizing routing
-    and symmetry. Luke developed the LTSpice schematic and performed pre-layout simulation, while Shivani
-    coordinated the project timeline, supported integration tasks, authored the final report, and analyzed
-    the post-layout simulation results.
-    </p>
-    
+        <p>
+          Led physical design and layout implementation, translating schematic-level logic
+          into a transistor-level CMOS layout and optimizing routing for performance.
+        </p>
+        
     <div class="grid" style="margin-top:12px;">
       <div class="col-6">
         <h3 class="h3">My Contribution</h3>
@@ -128,16 +131,37 @@
         </figcaption>
       </figure>
         <ul>
-          <li>Layout architecture proposal (modular 1-bit cell → scalable 8-bit design)</li>
-          <li>Microwind transistor-level layout + routing</li>
-          <li>Layout optimization (symmetry, compactness, cleaner routing)</li>
-          <li>Post-layout simulation + timing validation</li>
+          <li><strong>Architecture:</strong> Proposed modular 1-bit cell for scalable 8-bit design</li>
+          <li><strong>Layout:</strong> Implemented CMOS layout and routing in Microwind</li>
+          <li><strong>Optimization:</strong> Improved symmetry, compactness, and interconnect efficiency</li>
+          <li><strong>Validation:</strong> Performed post-layout simulation and timing analysis</li>
         </ul>
       </div>
+    </div>
+  </article>
 
-      <div class="col-6">
-        <h3 class="h3">Team Contributions</h3>
-        <figure>
+<!-- 2) Planning & Collaboration -->
+<article class="card col-12">
+  <h2 class="h2">Planning and Workflow</h2>
+
+<div class="grid" style="margin-top:12px;">
+
+ <!-- LEFT COLUMN -->
+<div class="col-7">
+      <p>
+        Followed a structured workflow separating design, validation, and physical implementation
+        to ensure correctness before layout.
+      </p>
+      
+      <ul>
+        <li><strong>Design:</strong> Defined modular 1-bit full adder architecture</li>
+        <li><strong>Validation:</strong> Verified logic and timing in LTSpice</li>
+        <li><strong>Layout:</strong> Implemented transistor-level CMOS design in Microwind</li>
+        <li><strong>Iteration:</strong> Optimized routing and symmetry to reduce parasitics</li>
+        <li><strong>Verification:</strong> Post-layout simulation for timing analysis</li>
+      </ul>
+  <h3 class="h3">Team Roles</h3>
+          <figure>
         <img 
           src="../assets/8-bitFullAdder/Group_1.jpg"
           alt="Group Photo"
@@ -148,41 +172,6 @@
           Figure 2. From left to right: Shivani Mruthyunjaya, Sloan Louden-Robins, Luke Scarpato
         </figcaption>
       </figure>
-        <ul>
-          <li>LTspice schematic + simulation validation (Luke)</li>
-          <li>Timeline, documentation, and simulation analysis (Shivani)</li>
-          <li>Final report and results packaging (team)</li>
-        </ul>
-      </div>
-    </div>
-  </article>
-
-<!-- 2) Planning & Collaboration -->
-<article class="card col-12">
-  <h2 class="h2">Planning and Collaboration</h2>
-
-<div class="grid" style="margin-top:12px;">
-
- <!-- LEFT COLUMN -->
-<div class="col-7">
-  <p>
-    The project followed a staged engineering workflow that separated architectural design,
-    schematic validation, and physical implementation. We first defined and verified a
-    transistor-level 1-bit full adder in LTSpice before scaling the design into an 8-bit
-    ripple-carry architecture. This approach ensured logical correctness and timing behavior
-    were validated prior to committing to physical layout in Microwind.
-  </p>
-
-  <h3 class="h3">Engineering Workflow</h3>
-  <ul>
-    <li><strong>Architecture definition:</strong> designed a modular 1-bit full adder cell as the scalable building block</li>
-    <li><strong>Schematic validation:</strong> implemented and simulated the design in LTSpice to confirm logic correctness and baseline timing</li>
-    <li><strong>Physical implementation:</strong> translated the schematic into transistor-level CMOS layout in Microwind</li>
-    <li><strong>Optimization loop:</strong> iterated routing, symmetry, and layout organization to reduce parasitics and congestion</li>
-    <li><strong>Post-layout verification:</strong> simulated the final layout to analyze propagation delay and carry-chain behavior</li>
-  </ul>
-
-  <h3 class="h3">Team Roles</h3>
   <ul>
     <li><strong>Sloan Louden-Robins:</strong> proposed the modular layout architecture, implemented the Microwind CMOS layout, optimized routing and symmetry, and ran post-layout simulations</li>
     <li><strong>Luke Scarpato:</strong> implemented the LTSpice schematic and performed functional and timing simulations</li>
@@ -210,23 +199,17 @@
 <!-- 3) Architecture -->
 <article class="card col-12">
   <h2 class="h2">Architecture</h2>
-  <p>
-    The design is built around a modular 1-bit CMOS full adder cell that computes 
-    <strong>Sum = A ⊕ B ⊕ C<sub>in</sub></strong> and 
-    <strong>C<sub>out</sub> = AB + (A ⊕ B)C<sub>in</sub></strong>. 
-    Each cell is implemented at the transistor level using complementary pull-up (PMOS) and pull-down (NMOS) networks. 
-    Eight identical cells are cascaded to form a ripple-carry architecture, where the carry-out of each stage feeds the next stage's carry-in.
-    In the worst case, the carry must propagate through all stages, producing a delay that scales approximately linearly with bit width.
-  </p>
-
- <h3 class="h3">Design Theory (LTSpice)</h3>    
-  <ul>
-    <li><strong>Logic implementation:</strong> Boolean expressions rewritten using NAND-based equivalents (DeMorgan transformations) for efficient CMOS realization.</li>
-    <li><strong>1-bit cell:</strong> transistor-level CMOS implementation producing Sum and Carry outputs from inputs A, B, and C<sub>in</sub>.</li>
-    <li><strong>Scaling strategy:</strong> eight identical cells cascaded (C<sub>out,i</sub> → C<sub>in,i+1</sub>) to form the ripple-carry adder.</li>
-    <li><strong>Timing model:</strong> worst-case propagation delay dominated by the carry chain where 
-    t<sub>pd,total</sub> ≈ N · t<sub>carry</sub>.</li>
-  </ul>
+     <p>
+      Implemented a modular CMOS full adder cell and scaled it to an 8-bit ripple-carry
+      architecture, where carry propagation defines the critical path delay.
+    </p>
+    
+    <ul>
+      <li><strong>Logic:</strong> CMOS implementation of Sum and Carry using pull-up/pull-down networks</li>
+      <li><strong>Structure:</strong> 1-bit cell cascaded to form 8-bit adder</li>
+      <li><strong>Scaling:</strong> Carry-out feeds next stage (ripple-carry)</li>
+      <li><strong>Timing:</strong> Worst-case delay dominated by carry chain (t<sub>pd</sub> ∝ N)</li>
+    </ul>
 
   <div class="grid" style="margin-top:12px;">
     <div class="col-6">
@@ -277,26 +260,20 @@
 
     <!-- LEFT COLUMN -->
     <div class="col-6">
-      <h3 class="h3">Design Goals</h3>
       <ul>
-        <li>Preserve layout symmetry to maintain consistent electrical behavior across stages</li>
-        <li>Minimize interconnect length to reduce parasitic resistance and capacitance</li>
-        <li>Maintain clean and repeatable VDD/GND distribution</li>
-        <li>Enable modular tiling of the 1-bit cell for scalable integration</li>
+        <li><strong>Symmetry:</strong> Maintained consistent layout to reduce mismatch</li>
+        <li><strong>Routing:</strong> Minimized interconnect length to reduce parasitics</li>
+        <li><strong>Power:</strong> Structured VDD/GND distribution for stability</li>
+        <li><strong>Scalability:</strong> Designed modular bit-slice for easy tiling</li>
       </ul>
-
-      <h3 class="h3">Implementation Decisions</h3>
+      
+      <h3 class="h3">Key Decisions</h3>
       <ul>
-        <li>Standardized a compact 1-bit layout that tiles cleanly across 8 stages</li>
-        <li>Routed the carry path deliberately since it dominates the critical delay</li>
-        <li>Maintained consistent transistor orientation to simplify routing</li>
-        <li>Used Metal2 strategically for longer interconnects and crossings</li>
+        <li>Standardized compact 1-bit layout cell</li>
+        <li>Optimized carry path (critical delay path)</li>
+        <li>Maintained consistent transistor orientation</li>
+        <li>Used higher metal layers for long interconnects</li>
       </ul>
-
-      <p class="muted">
-        The modular bit-slice layout allows the architecture to scale beyond 8 bits with minimal
-        structural modification, preserving routing consistency and timing behavior.
-      </p>
     </div>
 
     <!-- RIGHT COLUMN -->
@@ -339,29 +316,23 @@
     <div class="col-7">
 
       <p>
-        The physical layout was refined through several iterations to improve routing clarity
-        and reduce delay along the critical carry path. Early layout versions exposed areas of
-        routing congestion and longer interconnect runs, which increased parasitic resistance
-        and capacitance. The design was progressively reorganized to shorten critical signal
-        paths, maintain symmetry between bit-slices, and improve overall layout regularity.
+        Iteratively refined layout to reduce delay and improve routing efficiency,
+        focusing on the carry propagation path.
       </p>
-
-      <h3 class="h3">What I optimized</h3>
+      
       <ul>
-        <li>Reduced routing congestion in regions with multiple signal crossings</li>
-        <li>Shortened carry-chain interconnects, which dominate worst-case propagation delay</li>
-        <li>Improved bit-slice symmetry to maintain consistent parasitic behavior across stages</li>
-        <li>Standardized routing patterns for easier verification and debugging</li>
+        <li>Reduced routing congestion and interconnect length</li>
+        <li>Optimized carry-chain path (critical delay)</li>
+        <li>Improved bit-slice symmetry for consistent parasitics</li>
+        <li>Standardized routing patterns for verification</li>
       </ul>
-
-      <h3 class="h3">How I validated improvements</h3>
+      
+      <h3 class="h3">Validation</h3>
       <ul>
-        <li>Re-ran Microwind post-layout simulation after major layout revisions</li>
-        <li>Compared propagation delay across design iterations</li>
-        <li>Verified logical correctness under multiple input switching scenarios</li>
-        <li>Monitored timing consistency along the carry propagation path</li>
+        <li>Re-simulated after layout revisions</li>
+        <li>Compared propagation delay across iterations</li>
+        <li>Verified logic under multiple switching conditions</li>
       </ul>
-
     </div>
   </div>
 </article>
@@ -374,32 +345,16 @@
     <div class="col-7">
 
       <p>
-        After completing the physical layout, I ran post-layout simulations in Microwind to evaluate
-        timing behavior with real interconnect parasitics. Unlike schematic-level simulation, this
-        stage captures the impact of wire length, routing capacitance, and transistor placement on
-        propagation delay.
+        Performed post-layout simulation to evaluate timing with interconnect parasitics,
+        capturing real physical effects absent in schematic-level models.
       </p>
-
-      <h3 class="h3">What I measured</h3>
+      
       <ul>
-        <li>Input-to-output propagation delay along the critical carry chain</li>
-        <li>Timing consistency of Sum and Carry outputs across all 8 stages</li>
-        <li>Effects of routing parasitics on switching behavior</li>
+        <li><strong>Measured:</strong> Carry-chain propagation delay (critical path)</li>
+        <li><strong>Analyzed:</strong> Timing consistency across all stages</li>
+        <li><strong>Observed:</strong> Delay accumulation due to ripple architecture</li>
+        <li><strong>Compared:</strong> Layout vs LTSpice baseline</li>
       </ul>
-
-      <h3 class="h3">Test approach</h3>
-      <ul>
-        <li>Applied synchronized pulse inputs to A, B, and C<sub>in</sub> to trigger carry propagation</li>
-        <li>Observed output transitions across bit positions to identify delay accumulation</li>
-        <li>Compared results against the LTSpice schematic-level timing baseline</li>
-        <li>Identified the carry chain as the dominant contributor to worst-case delay</li>
-      </ul>
-
-      <p class="muted">
-        As expected for ripple-carry architectures, propagation delay increased across stages as the
-        carry signal propagated through the chain. The post-layout results confirmed that interconnect
-        parasitics introduce additional delay compared to ideal schematic simulation.
-      </p>
 
     </div>
 
@@ -419,11 +374,11 @@
   <!-- 7) Key Takeaways -->
   <article class="card col-12">
     <h2 class="h2">Key Takeaways</h2>
-    <ul>
-      <li>Physical layout decisions directly impact timing through parasitics and interconnect length.</li>
-      <li>Modular cell design makes scaling (1-bit → 8-bit) cleaner and easier to verify.</li>
-      <li>Optimization is an iterative loop: route → simulate → revise → re-simulate.</li>
-    </ul>
+      <ul>
+        <li>Layout directly impacts timing through parasitics and interconnect design</li>
+        <li>Modular design enables scalable and verifiable architectures</li>
+        <li>Optimization requires iterative layout → simulate → refine cycles</li>
+      </ul>
   </article>
 
 </section>
