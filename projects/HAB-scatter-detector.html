@@ -55,15 +55,17 @@
  <!-- Page header card -->
 <div class="card" style="margin-top:16px;">
   <h2 class="h2">Project Overview</h2>
-  <p>
-    This project focused on the design and validation of a compact scatter detector system for measuring atmospheric CO₂ 
-    concentration in a high-altitude balloon (HAB) environment. The system integrates a photodiode-based sensing mechanism
-    with an analog front-end, filtering stages, and digital acquisition via a microcontroller.
-
-    The design process included schematic development, PCB layout, analog signal conditioning using a transimpedance amplifier
-    (TIA), and mechanical enclosure modeling for optical isolation. Emphasis was placed on signal integrity, noise reduction, 
-    and reliable data acquisition under constrained environmental conditions.
-  </p>
+      <p>
+      Designed a PCB-based photodiode scatter detector for CO₂ sensing in a high-altitude balloon system,
+      integrating analog signal conditioning, embedded acquisition, and mechanical enclosure design.
+      </p>
+      
+      <ul>
+        <li><strong>Sensing:</strong> Photodiode-based optical scatter detection</li>
+        <li><strong>Analog:</strong> OPA320 transimpedance amplifier + filtering</li>
+        <li><strong>Hardware:</strong> Custom PCB with low-noise layout</li>
+        <li><strong>System:</strong> Embedded data acquisition via ADC + microcontroller</li>
+      </ul>
 </div>
 
   <!-- Optional quick stats row -->
@@ -139,11 +141,10 @@
 
  <!-- LEFT COLUMN -->
 <div class="col-7">
-  <p>
-    The PCB was designed to support low-noise analog measurements while interfacing with a MicroMod
-    processor via I²C. Special attention was given to grounding strategy, component placement, and minimizing
-    parasitic effects in the analog front-end.
-  </p>
+      <p>
+      Designed a low-noise PCB for photodiode sensing with careful grounding,
+      component placement, and signal routing.
+      </p>
 
         <h3 class="h3">Design Considerations</h3>
         <ul>
@@ -168,7 +169,7 @@
       alt="Physical PCB"
       style="width:100%; height:auto; display:block; border-radius:14px;"
     >
-    <figcaption class="uted" style="font-size:0.85rem;">
+    <figcaption class="muted" style="font-size:0.85rem;">
       Figure 3. Assembled PCB mounted to MicroMod carrier board during validation testing.
     </figcaption>
   </figure>
@@ -235,6 +236,16 @@
       </figure>
       </div>
   </article>
+
+  <article class="card col-12">
+  <h2 class="h2">Key Takeaways</h2>
+  <ul>
+    <li>Analog front-end design is critical for low-level sensor accuracy</li>
+    <li>PCB layout strongly impacts noise and signal integrity</li>
+    <li>Combining hardware, analog, and mechanical design enables robust sensing systems</li>
+  </ul>
+</article>
+  
 </main>
 
 <footer class="container">
