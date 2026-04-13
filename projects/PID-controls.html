@@ -43,27 +43,6 @@
 
 <main class="container">
 
-  <!-- Hero Section -->
-<section class="card" style="padding:0; overflow:hidden;">
-
-  <div style="position:relative;">
-
-    <!-- Hero Image -->
-    <img
-      src="../PICTURE PATH HERE"
-      alt="TITLE OF PICTURE"
-      style="width:100%; height:auto; display:block;"
-    >
-
-    <!-- Optional overlay -->
-    <div style="
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:100%;
-      padding:24px;
-      background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0));
-    ">
       <h1 class="h1" style="margin:0; color:white;">
         Tuned Analog PID Controller 
       </h1>
@@ -72,20 +51,22 @@
       </p>
     </div>
 
-  </div>
-
 </section>
   
 <!-- Page header card -->
 <div class="card" style="margin-top:16px;">
   <h2 class="h2">Project Overview</h2>
-  <p>
-   This project implements a tuned analog PID controller for a third-order plant with poles at 70, 90, and 100 rad/s. I modeled the plant in MATLAB,
-    verified frequency and time-domain behavior, and then implemented the equivalent circuit in LTSpice. I designed the controller using classical 
-    techniques (frequency response + root locus) and validated tuning approaches including Ziegler–Nichols variants and a custom tuning strategy. 
-    The final tuned controller achieved a ~58.9% reduction in time-to-peak, ~39.7% reduction in settling time, and ~2% overshoot, with strong 
-    agreement between MATLAB and LTSpice.
-  </p>
+    <p>
+      Designed and implemented an analog PID controller for a third-order system
+      (poles at 70, 90, 100 rad/s), with validation across MATLAB and LTSpice.
+    </p>
+    
+    <ul>
+      <li><strong>Design:</strong> Root locus + frequency-domain methods</li>
+      <li><strong>Implementation:</strong> Op-amp based analog PID circuit</li>
+      <li><strong>Validation:</strong> Cross-verified simulation and circuit behavior</li>
+      <li><strong>Result:</strong> ~59% reduction in time-to-peak, ~40% reduction in settling time, ~2% overshoot</li>
+    </ul>
 </div>
 
   <!-- Optional quick stats row -->
@@ -107,20 +88,24 @@
   <!-- 1) Plant Modeling + Validation -->
   <article class="card col-12">
     <h2 class="h2">Plant Modeling + Validation</h2>
-<p>
-Before designing the controller, the system plant was implemented and verified to ensure the
-physical circuit accurately represented the intended transfer function. The plant was modeled
-as a third-order system composed of three cascaded RC stages, each representing a single pole
-in the system dynamics. Component values were selected to map the desired pole locations to
-practical resistor and capacitor values, allowing the theoretical model to be directly
-implemented in LTSpice.
-
-Frequency-domain analysis was then used to validate the behavior of the implemented plant.
-The resulting Bode plot confirmed the expected third-order characteristics, including the
-progressive magnitude roll-off and phase lag associated with three poles. Agreement between
-the analytical model and simulation ensured the plant behaved as expected prior to beginning
-PID controller design and tuning.
-</p>
+      <p>
+        Modeled the plant as a third-order system using cascaded RC stages, mapping
+        pole locations directly to component values for circuit implementation.
+      </p>
+      
+      <h3 class="h3">Implementation</h3>
+      <ul>
+        <li>Mapped poles using \( C = \frac{1}{R\omega_p} \)</li>
+        <li>Built modular RC stages representing system dynamics</li>
+        <li>Enabled direct translation from model → circuit</li>
+      </ul>
+      
+      <h3 class="h3">Validation</h3>
+      <ul>
+        <li>Verified −60 dB/decade roll-off via Bode analysis</li>
+        <li>Matched simulated response to theoretical model</li>
+        <li>Confirmed plant behavior prior to controller design</li>
+      </ul>
 
 <div class="grid" style="margin-top:12px;">
   <div class="col-6">
@@ -178,34 +163,23 @@ PID controller design and tuning.
     <div class="col-7">
 
       <p>
-        After validating the plant model, the controller was designed using a pole-placement
-        approach guided by root locus analysis. The goal was to move the dominant closed-loop
-        poles to locations that improved transient response while maintaining the specified
-        overshoot constraint. Root locus visualization allowed the effect of gain changes on
-        system stability and damping ratio to be evaluated before implementing the controller.
+        Designed the controller using root locus to place dominant poles for improved
+        transient response while maintaining overshoot constraints.
       </p>
-
-      <p>
-        Controller performance was then validated through time-domain step response simulations.
-        As integral and derivative terms were introduced, the design was iteratively refined to
-        balance rise time improvement, overshoot limits, and overall stability. This workflow
-        ensured the final PID controller was derived from analytical design principles rather
-        than purely empirical tuning.
-      </p>
-
-      <h3 class="h3">Design Targets</h3>
+      
+      <h3 class="h3">Design Goals</h3>
       <ul>
-        <li>Time-to-peak improvement ≥ 50%</li>
+        <li>≥50% improvement in time-to-peak</li>
         <li>Overshoot ≤ 9.48%</li>
-        <li>Stable closed-loop response with well-damped dominant poles</li>
+        <li>Stable, well-damped closed-loop response</li>
       </ul>
-
-      <h3 class="h3">Methods Used</h3>
+      
+      <h3 class="h3">Methods</h3>
       <ul>
-        <li>Root locus analysis for gain selection and dominant pole placement</li>
-        <li>Damping ratio targeting to satisfy overshoot requirements</li>
-        <li>Time-domain validation using step response simulation</li>
-        <li>Tuning comparison (Ziegler–Nichols variants, Skogestad IMC tuning, and custom tuning)</li>
+        <li>Root locus for gain selection and pole placement</li>
+        <li>Damping ratio targeting for overshoot control</li>
+        <li>Step response validation in time domain</li>
+        <li>Tuning comparison: Ziegler–Nichols, IMC, custom</li>
       </ul>
 
     </div>
@@ -234,30 +208,17 @@ PID controller design and tuning.
 <!-- 3) Analog PID Implementation -->
 <article class="card col-12">
   <h2 class="h2">Analog PID Implementation</h2>
-
-  <p>
-    After determining suitable controller gains through root locus analysis and step-response
-    validation, the PID controller was implemented as an analog circuit in LTSpice. The proportional,
-    integral, and derivative terms were realized using op-amp based gain, integrator, and differentiator
-    stages. Controller gains were translated into resistor and capacitor values so that the physical
-    circuit directly represented the designed transfer function.
-  </p>
-
-  <p>
-    The PID controller, summing junction, and plant were then integrated into a full closed-loop
-    simulation. This allowed the controller behavior to be verified under realistic circuit conditions
-    and compared against the expected MATLAB response. Agreement between analytical predictions and
-    circuit-level simulation confirmed the implementation accurately reproduced the designed controller
-    dynamics.
-  </p>
-
-  <h3 class="h3">Full PID + Plant Schematic</h3>
-  <ul>
-    <li>Implemented proportional, integral, and derivative channels using op-amp circuits</li>
-    <li>Mapped controller gains to resistor and capacitor values for analog realization</li>
-    <li>Integrated controller with plant to form full closed-loop system</li>
-    <li>Verified closed-loop stability and transient behavior in LTSpice</li>
-  </ul>
+      
+      <p>
+        Implemented the PID controller as an analog circuit using op-amp based
+        proportional, integral, and derivative stages.
+      </p>
+      
+      <ul>
+        <li><strong>Realization:</strong> Converted gains to resistor/capacitor values</li>
+        <li><strong>Integration:</strong> Combined controller + plant into closed-loop system</li>
+        <li><strong>Validation:</strong> Matched LTSpice response to MATLAB predictions</li>
+      </ul>
 
   <div class="grid" style="margin-top:12px;">
 
@@ -308,54 +269,25 @@ PID controller design and tuning.
 <article class="card col-12">
   <h2 class="h2">Results</h2>
 
-  <p>
-    The final PID controller achieved the desired transient performance while maintaining
-    stable closed-loop behavior. Simulation results from MATLAB were compared against the
-    LTSpice circuit implementation to verify that the analytical design translated accurately
-    to the analog realization. The close agreement between both environments confirms that
-    the controller design, component mapping, and circuit implementation behaved as expected.
-  </p>
-
-  <div class="grid" style="margin-top:12px;">
-
-    <div class="col-6">
-
-      <h3 class="h3">Performance Summary</h3>
-
+      <p>
+        Final controller met all performance targets with strong agreement between
+        MATLAB and LTSpice, validating both the design methodology and circuit implementation.
+      </p>
+      
+      <h3 class="h3">Performance</h3>
       <ul>
-        <li><strong>Time to peak:</strong> 24.3 ms (MATLAB) vs 24.36 ms (LTSpice)</li>
-        <li><strong>Settling time:</strong> 54.5 ms (MATLAB) vs 54.47 ms (LTSpice)</li>
-        <li><strong>Percent overshoot:</strong> 2.0% (MATLAB) vs 2.1% (LTSpice)</li>
-        <li><strong>Targets met:</strong> ≥50% improvement in time-to-peak and ≤9.48% overshoot</li>
+        <li><strong>Tp:</strong> 24.3 ms (MATLAB) vs 24.36 ms (LTSpice)</li>
+        <li><strong>Ts:</strong> 54.5 ms vs 54.47 ms</li>
+        <li><strong>%OS:</strong> 2.0% vs 2.1%</li>
       </ul>
-
-      <figure>
-        <img
-          src="../PATH HERE"
-          alt="Closed-loop step response comparison"
-          style="width:100%; height:auto; display:block; border-radius:14px;"
-        >
-
-        <figcaption class="muted" style="font-size:0.85rem;">
-          Figure 6. Final closed-loop step response demonstrating improved transient
-          performance while satisfying overshoot constraints.
-        </figcaption>
-      </figure>
-
-    </div>
-
-    <div class="col-6">
-
+      
       <h3 class="h3">Key Takeaways</h3>
-
       <ul>
-        <li>Cross-tool validation: MATLAB system modeling matched LTSpice circuit simulation</li>
-        <li>Demonstrated a structured controls workflow (model → design → validate)</li>
-        <li>Successfully translated theoretical PID gains into a realizable analog circuit</li>
-        <li>Verified transient performance improvements while maintaining stability</li>
+        <li>Accurate model → circuit translation</li>
+        <li>Consistent behavior across simulation environments</li>
+        <li>Structured workflow: model → design → validate</li>
+        <li>Successful analog realization of PID control</li>
       </ul>
-
-    </div>
 
   </div>
 </article>
